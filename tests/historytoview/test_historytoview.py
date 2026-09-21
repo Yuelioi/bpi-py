@@ -183,11 +183,7 @@ async def test_invalid_arguments_fail_before_network(name, kwargs):
 
 def test_fixture_hashes_are_recorded():
     provenance = json.loads((FIXTURES / "provenance.json").read_bytes())
-    paths = [
-        path
-        for path in provenance["sha256"]
-        if path.startswith("historytoview/")
-    ]
+    paths = [path for path in provenance["sha256"] if path.startswith("historytoview/")]
     assert len(paths) == 9
     for rel in paths:
         digest = hashlib.sha256((FIXTURES / rel).read_bytes()).hexdigest()
@@ -207,9 +203,7 @@ def test_complete_historytoview_module_mapping():
     inventory = json.loads((ROOT / "migration/generated/inventory.json").read_bytes())
     mapping = json.loads((ROOT / "migration/python-api.json").read_bytes())
     expected = {
-        method["name"]
-        for method in inventory["methods"]
-        if method["domain"] == "historytoview"
+        method["name"] for method in inventory["methods"] if method["domain"] == "historytoview"
     }
     implemented = {
         api["python"].rsplit(".", 1)[1]
@@ -220,6 +214,5 @@ def test_complete_historytoview_module_mapping():
     assert len(expected) == 9
     assert implemented == expected
     assert all(
-        inspect.iscoroutinefunction(getattr(HistoryToViewClient, name, None))
-        for name in expected
+        inspect.iscoroutinefunction(getattr(HistoryToViewClient, name, None)) for name in expected
     )

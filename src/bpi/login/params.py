@@ -17,9 +17,7 @@ def notice_query(mid: int, buvid: str | None = None) -> dict[str, str]:
     return query
 
 
-def log_query(
-    jsonp: str = "jsonp", web_location: str = "333.33"
-) -> dict[str, str]:
+def log_query(jsonp: str = "jsonp", web_location: str = "333.33") -> dict[str, str]:
     return {
         "jsonp": _non_blank(jsonp, "jsonp"),
         "web_location": _non_blank(web_location, "web_location"),

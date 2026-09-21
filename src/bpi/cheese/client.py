@@ -15,9 +15,7 @@ _STREAM = TypeAdapter(CourseVideoStreamData)
 class CheeseClient(CheeseReadMethods):
     """PUGV/course API entry point."""
 
-    async def info(
-        self, *, season_id: int | None = None, ep_id: int | None = None
-    ) -> CourseInfo:
+    async def info(self, *, season_id: int | None = None, ep_id: int | None = None) -> CourseInfo:
         if (season_id is None) == (ep_id is None):
             raise InvalidParameterError("Provide exactly one of season_id or ep_id")
         if season_id is not None:

@@ -76,9 +76,7 @@ class UserActionMethods:
     def __init__(self, client: AsyncBpiClient) -> None:
         self._client = client
 
-    async def modify_relation(
-        self, *, fid: int, action: int, source: int | None = None
-    ) -> None:
+    async def modify_relation(self, *, fid: int, action: int, source: int | None = None) -> None:
         form = {
             "fid": integer(fid, "fid"),
             "act": _choice(action, "action", _RELATION_ACTIONS),
@@ -115,9 +113,7 @@ class UserActionMethods:
     async def add_group_users_to_tags(
         self, *, fids: Sequence[int], tag_ids: Sequence[int]
     ) -> JsonValue:
-        return await self._group_users(
-            "/x/relation/tags/addUsers", fids=fids, tag_ids=tag_ids
-        )
+        return await self._group_users("/x/relation/tags/addUsers", fids=fids, tag_ids=tag_ids)
 
     async def remove_group_users(
         self, *, fids: Sequence[int], tag_ids: Sequence[int] | None = None
@@ -129,9 +125,7 @@ class UserActionMethods:
     async def copy_group_users_to_tags(
         self, *, fids: Sequence[int], tag_ids: Sequence[int]
     ) -> JsonValue:
-        return await self._group_users(
-            "/x/relation/tags/copyUsers", fids=fids, tag_ids=tag_ids
-        )
+        return await self._group_users("/x/relation/tags/copyUsers", fids=fids, tag_ids=tag_ids)
 
     async def move_group_users_to_tags(
         self,

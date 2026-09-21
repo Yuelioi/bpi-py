@@ -35,9 +35,7 @@ def _uint(value: int, name: str, bits: int, minimum: int = 0) -> str:
     return str(value)
 
 
-def _filter_value(
-    value: HistoryBusiness | HistoryListType | str, name: str
-) -> str:
+def _filter_value(value: HistoryBusiness | HistoryListType | str, name: str) -> str:
     if isinstance(value, (HistoryBusiness, HistoryListType)):
         return value.value
     return _nonblank(value, name)
@@ -74,9 +72,7 @@ def history_shadow_form(switch: bool, csrf: str) -> dict[str, str]:
     return {"switch": str(switch).lower(), "csrf": csrf}
 
 
-def toview_add_form(
-    aid: int | None, bvid: str | None, csrf: str
-) -> dict[str, str]:
+def toview_add_form(aid: int | None, bvid: str | None, csrf: str) -> dict[str, str]:
     form = {"csrf": csrf}
     if aid is not None:
         form["aid"] = _uint(aid, "aid", 64, 1)
@@ -87,9 +83,7 @@ def toview_add_form(
     return form
 
 
-def toview_delete_form(
-    aid: int | None, viewed: bool | None, csrf: str
-) -> dict[str, str]:
+def toview_delete_form(aid: int | None, viewed: bool | None, csrf: str) -> dict[str, str]:
     form = {"csrf": csrf}
     if aid is not None:
         form["aid"] = _uint(aid, "aid", 64, 1)

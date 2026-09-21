@@ -110,9 +110,7 @@ def segment_query(
     return params
 
 
-def web_view_query(
-    danmaku_type: int, oid: int, *, pid: int | None = None
-) -> dict[str, str]:
+def web_view_query(danmaku_type: int, oid: int, *, pid: int | None = None) -> dict[str, str]:
     params = {
         "type": _nonzero_u8(danmaku_type, "type"),
         "oid": _positive(oid, "oid"),
@@ -226,9 +224,7 @@ def edit_state_form(
     }
 
 
-def edit_pool_form(
-    oid: int, dmids: Iterable[int], pool: int, *, csrf: str = ""
-) -> dict[str, str]:
+def edit_pool_form(oid: int, dmids: Iterable[int], pool: int, *, csrf: str = "") -> dict[str, str]:
     return {
         "type": "1",
         "oid": _positive(oid, "oid"),

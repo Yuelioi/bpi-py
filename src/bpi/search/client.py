@@ -93,9 +93,7 @@ class SearchClient:
         user_type: UserType = UserType.ALL,
         page: int = 1,
     ) -> SearchData[list[BiliUser]]:
-        return await self._typed(
-            bili_user_params(keyword, order_sort, user_type, page), _BILI_USER
-        )
+        return await self._typed(bili_user_params(keyword, order_sort, user_type, page), _BILI_USER)
 
     async def live(self, *, keyword: str, page: int = 1) -> SearchData[LiveData]:
         return await self._typed(live_params(keyword, page), _LIVE)
@@ -117,9 +115,7 @@ class SearchClient:
         user_type: UserType = UserType.ALL,
         page: int = 1,
     ) -> SearchData[list[LiveUser]]:
-        return await self._typed(
-            live_user_params(keyword, order_sort, user_type, page), _LIVE_USER
-        )
+        return await self._typed(live_user_params(keyword, order_sort, user_type, page), _LIVE_USER)
 
     async def movie(self, *, keyword: str, page: int = 1) -> SearchData[list[Movie]]:
         return await self._typed(movie_params(keyword, page), _MOVIE)

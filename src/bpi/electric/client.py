@@ -154,9 +154,7 @@ class ElectricClient:
         otype: str,
         oid: int,
     ) -> BcoinQuickPayData:
-        form = bcoin_quick_pay_form(
-            bp_num, is_bp_remains_prior, up_mid, otype, oid, csrf=""
-        )
+        form = bcoin_quick_pay_form(bp_num, is_bp_remains_prior, up_mid, otype, oid, csrf="")
         form["csrf"] = self._client.csrf()
         return await self._client._post_payload(
             "/x/ugcpay/web/v2/trade/elec/pay/quick", {}, _BCOIN_QUICK_PAY, form=form

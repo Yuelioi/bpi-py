@@ -159,9 +159,7 @@ class ModelEmitter:
             if rust_type != "Mid":
                 raise ValueError(f"Unsupported serde custom deserializer type {model}.{name}")
             self.serde_helpers.add("mid")
-            annotation = (
-                "Annotated[int, BeforeValidator(_deserialize_mid_from_string_or_number)]"
-            )
+            annotation = "Annotated[int, BeforeValidator(_deserialize_mid_from_string_or_number)]"
         elif deserialize_with == "deserialize_optional_string":
             if rust_type != "Option<String>":
                 raise ValueError(f"Unsupported serde custom deserializer type {model}.{name}")

@@ -212,8 +212,16 @@ async def test_create_text_source_derived_multipart():
         assert request.url.path == "/dynamic_svr/v1/dynamic_svr/create"
         body = await request.aread()
         for token in [
-            b'name="dynamic_id"', b"0", b'name="type"', b"4", b'name="rid"',
-            b'name="content"', b"hello", b'name="csrf"', b'name="csrf_token"', b"csrf-token",
+            b'name="dynamic_id"',
+            b"0",
+            b'name="type"',
+            b"4",
+            b'name="rid"',
+            b'name="content"',
+            b"hello",
+            b'name="csrf"',
+            b'name="csrf_token"',
+            b"csrf-token",
         ]:
             assert token in body
         return httpx.Response(
@@ -308,14 +316,11 @@ def test_fixture_hashes_are_recorded():
 def test_complete_dynamic_mapping():
     inventory = json.loads((ROOT / "migration/generated/inventory.json").read_bytes())
     mapping = json.loads((ROOT / "migration/python-api.json").read_bytes())
-    expected = {
-        method["name"] for method in inventory["methods"] if method["domain"] == "dynamic"
-    }
+    expected = {method["name"] for method in inventory["methods"] if method["domain"] == "dynamic"}
     implemented = {
         api["python"].rsplit(".", 1)[1]
         for api in mapping["apis"]
-        if api["python"].startswith("AsyncBpiClient.dynamic.")
-        and api["status"] == "implemented"
+        if api["python"].startswith("AsyncBpiClient.dynamic.") and api["status"] == "implemented"
     }
     assert len(expected) == 20
     assert implemented == expected

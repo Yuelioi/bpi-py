@@ -38,9 +38,7 @@ def created_list_query(
     return params
 
 
-def collected_list_query(
-    up_mid: int, page: int, page_size: int, platform: str
-) -> dict[str, str]:
+def collected_list_query(up_mid: int, page: int, page_size: int, platform: str) -> dict[str, str]:
     return {
         "up_mid": integer(up_mid, "up_mid"),
         "pn": integer(page, "page"),

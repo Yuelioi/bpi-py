@@ -79,9 +79,7 @@ class FavClient:
         self, *, resources: str, platform: str = "web"
     ) -> list[ResourceInfoItem]:
         params = resource_infos_query(resources, platform)
-        return await self._client._get_payload(
-            "/x/v3/fav/resource/infos", params, _RESOURCE_INFOS
-        )
+        return await self._client._get_payload("/x/v3/fav/resource/infos", params, _RESOURCE_INFOS)
 
     async def list_detail(
         self,
@@ -103,17 +101,13 @@ class FavClient:
             page_size,
             page,
         )
-        return await self._client._get_payload(
-            "/x/v3/fav/resource/list", params, _LIST_DETAIL
-        )
+        return await self._client._get_payload("/x/v3/fav/resource/list", params, _LIST_DETAIL)
 
     async def resource_ids(
         self, *, media_id: int, platform: str = "web"
     ) -> list[FavResourceIdItem]:
         params = resource_ids_query(media_id, platform)
-        return await self._client._get_payload(
-            "/x/v3/fav/resource/ids", params, _RESOURCE_IDS
-        )
+        return await self._client._get_payload("/x/v3/fav/resource/ids", params, _RESOURCE_IDS)
 
     async def add_folder(
         self,
@@ -130,9 +124,7 @@ class FavClient:
             privacy=privacy,
             cover=cover,
         )
-        return await self._client._post_payload(
-            "/x/v3/fav/folder/add", {}, _FOLDER_INFO, form=form
-        )
+        return await self._client._post_payload("/x/v3/fav/folder/add", {}, _FOLDER_INFO, form=form)
 
     async def edit_folder(
         self,
@@ -157,9 +149,7 @@ class FavClient:
 
     async def delete_folders(self, *, media_ids: list[int]) -> int:
         form = delete_folders_form(media_ids, self._client.csrf())
-        return await self._client._post_payload(
-            "/x/v3/fav/folder/del", {}, _INT, form=form
-        )
+        return await self._client._post_payload("/x/v3/fav/folder/del", {}, _INT, form=form)
 
     async def copy_resources(
         self,
@@ -176,9 +166,7 @@ class FavClient:
             resources,
             self._client.csrf(),
         )
-        return await self._client._post_payload(
-            "/x/v3/fav/resource/copy", {}, _INT, form=form
-        )
+        return await self._client._post_payload("/x/v3/fav/resource/copy", {}, _INT, form=form)
 
     async def move_resources(
         self,
@@ -195,18 +183,12 @@ class FavClient:
             resources,
             self._client.csrf(),
         )
-        return await self._client._post_payload(
-            "/x/v3/fav/resource/move", {}, _INT, form=form
-        )
+        return await self._client._post_payload("/x/v3/fav/resource/move", {}, _INT, form=form)
 
     async def delete_resources(self, *, media_id: int, resources: str) -> int:
         form = delete_resources_form(media_id, resources, self._client.csrf())
-        return await self._client._post_payload(
-            "/x/v3/fav/resource/batch-del", {}, _INT, form=form
-        )
+        return await self._client._post_payload("/x/v3/fav/resource/batch-del", {}, _INT, form=form)
 
     async def clean_resources(self, *, media_id: int) -> int:
         form = clean_resources_form(media_id, self._client.csrf())
-        return await self._client._post_payload(
-            "/x/v3/fav/resource/clean", {}, _INT, form=form
-        )
+        return await self._client._post_payload("/x/v3/fav/resource/clean", {}, _INT, form=form)

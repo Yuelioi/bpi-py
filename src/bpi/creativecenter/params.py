@@ -193,9 +193,7 @@ def episodes_add_body(
     }
 
 
-def season_edit_body(
-    season: SeasonEdit, sorts: Sequence[SeasonSectionSort]
-) -> dict[str, object]:
+def season_edit_body(season: SeasonEdit, sorts: Sequence[SeasonSectionSort]) -> dict[str, object]:
     if not isinstance(season, SeasonEdit):
         raise InvalidParameterError("season must be a SeasonEdit")
     return {
@@ -225,9 +223,7 @@ def season_section_episode_edit_body(
     return body
 
 
-def season_enable_section_form(
-    season_id: int, enable: bool, *, csrf: str = ""
-) -> dict[str, str]:
+def season_enable_section_form(season_id: int, enable: bool, *, csrf: str = "") -> dict[str, str]:
     if type(enable) is not bool:
         raise InvalidParameterError("enable must be a boolean")
     return {

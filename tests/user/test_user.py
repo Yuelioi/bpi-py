@@ -203,8 +203,7 @@ def test_user_fixture_hashes_are_recorded():
     assert len(paths) == 41
     for rel in paths:
         assert (
-            hashlib.sha256((FIXTURES / rel).read_bytes()).hexdigest()
-            == provenance["sha256"][rel]
+            hashlib.sha256((FIXTURES / rel).read_bytes()).hexdigest() == provenance["sha256"][rel]
         )
 
 

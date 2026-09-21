@@ -509,9 +509,7 @@ class LiveClient:
             host="api.live.bilibili.com",
         )
 
-    async def live_update_room_news(
-        self, *, room_id: int, uid: int, content: str
-    ) -> JsonValue:
+    async def live_update_room_news(self, *, room_id: int, uid: int, content: str) -> JsonValue:
         csrf = self._client.csrf()
         return await self._client._post_payload(
             "/xlive/app-blink/v1/index/updateRoomNews",
@@ -572,9 +570,7 @@ class LiveClient:
             host="api.live.bilibili.com",
         )
 
-    async def live_add_banned_user(
-        self, *, room_id: int, anchor_id: int, tuid: int
-    ) -> JsonValue:
+    async def live_add_banned_user(self, *, room_id: int, anchor_id: int, tuid: int) -> JsonValue:
         referer = moderation_referer(room_id)
         csrf = self._client.csrf()
         return await self._client._post_payload(
@@ -594,9 +590,7 @@ class LiveClient:
             referer=referer,
         )
 
-    async def live_del_banned_user(
-        self, *, room_id: int, anchor_id: int, tuid: int
-    ) -> JsonValue:
+    async def live_del_banned_user(self, *, room_id: int, anchor_id: int, tuid: int) -> JsonValue:
         referer = moderation_referer(room_id)
         csrf = self._client.csrf()
         return await self._client._post_payload(
@@ -628,9 +622,7 @@ class LiveClient:
             "/xlive/app-ucenter/v1/banned/DelShieldKeyword", room_id, keyword
         )
 
-    async def _shield_keyword_write(
-        self, path: str, room_id: int, keyword: str
-    ) -> JsonValue:
+    async def _shield_keyword_write(self, path: str, room_id: int, keyword: str) -> JsonValue:
         room_id = positive("room_id", room_id)
         keyword = nonblank("keyword", keyword)
         csrf = self._client.csrf()

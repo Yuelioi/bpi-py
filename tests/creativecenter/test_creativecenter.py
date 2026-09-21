@@ -107,9 +107,7 @@ async def test_promoted_read_success_cases(
 
 
 @pytest.mark.parametrize("fixture_path,method,kwargs", READ_CASES)
-async def test_promoted_read_error_cases(
-    fixture_path: str, method: str, kwargs: dict[str, object]
-):
+async def test_promoted_read_error_cases(fixture_path: str, method: str, kwargs: dict[str, object]):
     contract = _contract(fixture_path)
     error_cases = [case for case in contract["cases"] if case["response"].get("error")]
     for case in error_cases:
@@ -260,22 +258,28 @@ async def test_season_episode_add_variants_source_derived_json():
     async with AsyncBpiClient(
         cookie="bili_jct=csrf-token", transport=httpx.MockTransport(handler)
     ) as client:
-        assert await client.creativecenter.season_episodes_add(
-            section_id=7, episodes=[EpisodeAdd(title="第一集", aid=11, cid=12)]
-        ) is None
-        assert await client.creativecenter.season_section_add_episodes(
-            section_id=7,
-            episodes=[
-                Episode(
-                    title="第一集",
-                    aid=11,
-                    cid=12,
-                    charging_pay=0,
-                    member_first=0,
-                    limited_free=False,
-                )
-            ],
-        ) is None
+        assert (
+            await client.creativecenter.season_episodes_add(
+                section_id=7, episodes=[EpisodeAdd(title="第一集", aid=11, cid=12)]
+            )
+            is None
+        )
+        assert (
+            await client.creativecenter.season_section_add_episodes(
+                section_id=7,
+                episodes=[
+                    Episode(
+                        title="第一集",
+                        aid=11,
+                        cid=12,
+                        charging_pay=0,
+                        member_first=0,
+                        limited_free=False,
+                    )
+                ],
+            )
+            is None
+        )
     assert seen == 2
 
 

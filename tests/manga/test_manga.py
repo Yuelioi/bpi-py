@@ -185,9 +185,7 @@ async def test_point_exchange_source_derived_form():
         return httpx.Response(200, json={"code": 0, "data": {}})
 
     async with AsyncBpiClient(transport=httpx.MockTransport(handler)) as client:
-        result = await client.manga.manga_point_exchange(
-            product_id=1938, product_num=2, point=100
-        )
+        result = await client.manga.manga_point_exchange(product_id=1938, product_num=2, point=100)
     assert result == {}
 
 

@@ -102,9 +102,7 @@ class DanmakuClient:
         signed = await self._client._sign(params)
         return await self._client._get("/x/v2/dm/wbi/web/seg.so", signed)
 
-    async def web_view_proto(
-        self, *, danmaku_type: int, oid: int, pid: int | None = None
-    ) -> bytes:
+    async def web_view_proto(self, *, danmaku_type: int, oid: int, pid: int | None = None) -> bytes:
         return await self._client._get(
             "/x/v2/dm/web/view", web_view_query(danmaku_type, oid, pid=pid)
         )

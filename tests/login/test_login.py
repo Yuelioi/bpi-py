@@ -87,9 +87,7 @@ async def test_promoted_read_contracts(contract_dir, method, kwargs, response_fi
         ("notice/login-log", "log", {}),
     ],
 )
-async def test_new_private_reads_classify_anonymous_contracts(
-    contract_dir, method, kwargs
-):
+async def test_new_private_reads_classify_anonymous_contracts(contract_dir, method, kwargs):
     body = (LOGIN_FIXTURES / contract_dir / "responses/anonymous.error.json").read_bytes()
 
     def handler(request: httpx.Request) -> httpx.Response:

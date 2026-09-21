@@ -158,7 +158,9 @@ async def test_video_stream_promoted_profiles(profile):
             aid=997984154, ep_id=163956, cid=1183682680, quality=32, format_flags=16
         )
         assert value.quality == 32 and value.has_paid is False and value.dash is not None
-        assert value.dash.video[0].base_url == "https://example.invalid/bilibili/playurl/redacted.m4s"
+        assert (
+            value.dash.video[0].base_url == "https://example.invalid/bilibili/playurl/redacted.m4s"
+        )
         assert value.fragment_videos
         assert "32" in value.fragment_videos[0].video_info.file_info
 
@@ -197,8 +199,7 @@ def test_cheese_fixture_hashes_are_recorded():
     assert len(paths) == 16
     for rel in paths:
         assert (
-            hashlib.sha256((FIXTURES / rel).read_bytes()).hexdigest()
-            == provenance["sha256"][rel]
+            hashlib.sha256((FIXTURES / rel).read_bytes()).hexdigest() == provenance["sha256"][rel]
         )
 
 

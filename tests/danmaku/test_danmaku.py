@@ -107,9 +107,7 @@ async def test_thumbup_stats_promoted_contract(profile: str):
 
     cookie = None if profile == "anonymous" else "SESSDATA=fake"
     async with AsyncBpiClient(cookie=cookie, transport=httpx.MockTransport(handler)) as client:
-        result = await client.danmaku.thumbup_stats(
-            oid=413195701, ids=[1932011031958944000]
-        )
+        result = await client.danmaku.thumbup_stats(oid=413195701, ids=[1932011031958944000])
     assert result["1932011031958944000"].id_str == "1932011031958944000"
 
 
@@ -184,9 +182,7 @@ async def test_promoted_binary_reads(
 @pytest.mark.parametrize("profile", ["anonymous", "normal", "vip"])
 async def test_web_seg_wbi_promoted_contract(profile: str):
     contract = _contract("non-json-read/web-seg-wbi")
-    expected, content_type = _binary(
-        "non-json-read/web-seg-wbi", f"{profile}.success.json"
-    )
+    expected, content_type = _binary("non-json-read/web-seg-wbi", f"{profile}.success.json")
 
     def handler(request: httpx.Request) -> httpx.Response:
         base = contract["request"]["query"]
@@ -201,18 +197,14 @@ async def test_web_seg_wbi_promoted_contract(profile: str):
         cookie=cookie, transport=httpx.MockTransport(handler), clock=lambda: CLOCK
     ) as client:
         _seed_wbi(client)
-        result = await client.danmaku.web_seg_wbi_proto(
-            danmaku_type=1, oid=16546, segment_index=1
-        )
+        result = await client.danmaku.web_seg_wbi_proto(danmaku_type=1, oid=16546, segment_index=1)
     assert result == expected
 
 
 @pytest.mark.parametrize("profile", ["normal", "vip"])
 async def test_web_history_segment_binary_contract(profile: str):
     contract = _contract("non-json-read/web-history-seg")
-    expected, content_type = _binary(
-        "non-json-read/web-history-seg", f"{profile}.success.json"
-    )
+    expected, content_type = _binary("non-json-read/web-history-seg", f"{profile}.success.json")
 
     def handler(request: httpx.Request) -> httpx.Response:
         assert dict(request.url.params) == contract["request"]["query"]
@@ -460,14 +452,11 @@ def test_fixture_hashes_are_recorded():
 def test_complete_danmaku_mapping():
     inventory = json.loads((ROOT / "migration/generated/inventory.json").read_bytes())
     mapping = json.loads((ROOT / "migration/python-api.json").read_bytes())
-    expected = {
-        method["name"] for method in inventory["methods"] if method["domain"] == "danmaku"
-    }
+    expected = {method["name"] for method in inventory["methods"] if method["domain"] == "danmaku"}
     implemented = {
         api["python"].rsplit(".", 1)[1]
         for api in mapping["apis"]
-        if api["python"].startswith("AsyncBpiClient.danmaku.")
-        and api["status"] == "implemented"
+        if api["python"].startswith("AsyncBpiClient.danmaku.") and api["status"] == "implemented"
     }
     assert len(expected) == 19
     assert implemented == expected

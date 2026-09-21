@@ -93,9 +93,7 @@ class DynamicClient:
             offset=offset,
             update_baseline=update_baseline,
         )
-        return await self._client._get_payload(
-            "/x/polymer/web-dynamic/v1/feed/all", params, _ALL
-        )
+        return await self._client._get_payload("/x/polymer/web-dynamic/v1/feed/all", params, _ALL)
 
     async def check_new(
         self, *, update_baseline: str, dynamic_type: str | None = None
@@ -109,9 +107,7 @@ class DynamicClient:
         self, *, update_baseline: str | None = None, offset: str | None = None
     ) -> DynamicNavData:
         params = nav_feed_query(update_baseline=update_baseline, offset=offset)
-        return await self._client._get_payload(
-            "/x/polymer/web-dynamic/v1/feed/nav", params, _NAV
-        )
+        return await self._client._get_payload("/x/polymer/web-dynamic/v1/feed/nav", params, _NAV)
 
     async def feed_banner(self) -> DynamicBannerData:
         params = {"platform": "1", "position": "web动态", "web_location": "333.1365"}
@@ -121,13 +117,9 @@ class DynamicClient:
         self, *, dynamic_id: str, features: str = DEFAULT_DETAIL_FEATURES
     ) -> DynamicDetailData:
         params = detail_query(dynamic_id, features=features)
-        return await self._client._get_payload(
-            "/x/polymer/web-dynamic/v1/detail", params, _DETAIL
-        )
+        return await self._client._get_payload("/x/polymer/web-dynamic/v1/detail", params, _DETAIL)
 
-    async def reactions(
-        self, *, dynamic_id: str, offset: str | None = None
-    ) -> DynamicReactionData:
+    async def reactions(self, *, dynamic_id: str, offset: str | None = None) -> DynamicReactionData:
         params = offset_query(dynamic_id, offset=offset)
         return await self._client._get_payload(
             "/x/polymer/web-dynamic/v1/detail/reaction", params, _REACTIONS
@@ -143,9 +135,7 @@ class DynamicClient:
             host="api.vc.bilibili.com",
         )
 
-    async def forwards(
-        self, *, dynamic_id: str, offset: str | None = None
-    ) -> DynamicForwardData:
+    async def forwards(self, *, dynamic_id: str, offset: str | None = None) -> DynamicForwardData:
         params = offset_query(dynamic_id, offset=offset)
         return await self._client._get_payload(
             "/x/polymer/web-dynamic/v1/detail/forward", params, _FORWARDS
@@ -180,9 +170,7 @@ class DynamicClient:
         )
 
     async def recent_up(self) -> RecentUpData:
-        return await self._client._get_payload(
-            "/x/polymer/web-dynamic/v1/portal", {}, _RECENT_UP
-        )
+        return await self._client._get_payload("/x/polymer/web-dynamic/v1/portal", {}, _RECENT_UP)
 
     async def like(self, *, dyn_id_str: str, up: int) -> JsonValue:
         body = like_body(dyn_id_str, up)
@@ -229,9 +217,7 @@ class DynamicClient:
             optional=True,
         )
 
-    async def upload_pic(
-        self, *, file_path: str | Path, category: str = "daily"
-    ) -> UploadPicData:
+    async def upload_pic(self, *, file_path: str | Path, category: str = "daily") -> UploadPicData:
         category = upload_category(category)
         path = Path(file_path)
         try:

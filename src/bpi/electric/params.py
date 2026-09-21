@@ -22,9 +22,7 @@ def month_up_list_query(up_mid: int) -> dict[str, str]:
     return {"up_mid": integer(up_mid, "up_mid")}
 
 
-def video_show_query(
-    mid: int, aid: int | None = None, bvid: str | None = None
-) -> dict[str, str]:
+def video_show_query(mid: int, aid: int | None = None, bvid: str | None = None) -> dict[str, str]:
     query = {"mid": integer(mid, "mid")}
     if aid is not None:
         query["aid"] = integer(aid, "aid")

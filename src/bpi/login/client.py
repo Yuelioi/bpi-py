@@ -69,9 +69,7 @@ class LoginClient(LoginReadMethods):
             "/x/safecenter/login_notice", notice_query(mid, buvid), NOTICE
         )
 
-    async def log(
-        self, *, jsonp: str = "jsonp", web_location: str = "333.33"
-    ) -> LoginLogData:
+    async def log(self, *, jsonp: str = "jsonp", web_location: str = "333.33") -> LoginLogData:
         return await self._client._get_payload(
             "/x/member/web/login/log", log_query(jsonp, web_location), LOG
         )
@@ -149,9 +147,7 @@ class LoginClient(LoginReadMethods):
             host="passport.bilibili.com",
         )
 
-    async def login_with_sms(
-        self, *, cid: int, tel: int, captcha_key: str, code: str
-    ) -> None:
+    async def login_with_sms(self, *, cid: int, tel: int, captcha_key: str, code: str) -> None:
         response = await self._client._send_response(
             "POST",
             "/x/passport-login/web/login/sms",

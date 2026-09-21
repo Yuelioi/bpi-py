@@ -30,15 +30,11 @@ class ArticleClient:
             _INFO,
         )
 
-    async def view(
-        self, *, article_id: int, gaia_source: str = "main_web"
-    ) -> ArticleViewData:
+    async def view(self, *, article_id: int, gaia_source: str = "main_web") -> ArticleViewData:
         params = await self._client._sign(view_query(article_id, gaia_source))
         return await self._client._get_payload("/x/article/view", params, _VIEW)
 
-    async def cards(
-        self, *, ids: str, web_location: str = "333.1305"
-    ) -> CardData:
+    async def cards(self, *, ids: str, web_location: str = "333.1305") -> CardData:
         params = await self._client._sign(cards_query(ids, web_location))
         return await self._client._get_payload("/x/article/cards", params, _CARDS)
 

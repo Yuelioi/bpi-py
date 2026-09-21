@@ -146,9 +146,9 @@ WRITES = [
 async def test_write_protocol_is_source_derived(case, response_kind):
     name, kwargs, path, expected_form, payload_kind = case
     calls = []
-    folder_payload = json.loads(
-        (FAV_FIXTURES / "folder-info/responses/success.json").read_bytes()
-    )["data"]
+    folder_payload = json.loads((FAV_FIXTURES / "folder-info/responses/success.json").read_bytes())[
+        "data"
+    ]
 
     def handler(request):
         calls.append(request)
@@ -156,9 +156,7 @@ async def test_write_protocol_is_source_derived(case, response_kind):
         assert request.url.host == "api.bilibili.com"
         assert request.url.path == path
         assert dict(request.url.params) == {}
-        assert request.headers["content-type"].startswith(
-            "application/x-www-form-urlencoded"
-        )
+        assert request.headers["content-type"].startswith("application/x-www-form-urlencoded")
         actual = dict(parse_qsl(request.content.decode(), keep_blank_values=True))
         assert actual == expected_form
         assert "bili_jct=token" in request.headers.get("cookie", "")
@@ -228,9 +226,7 @@ async def test_invalid_arguments_fail_before_network(name, kwargs):
 
 
 def test_list_detail_null_medias_matches_rust_serde():
-    source = json.loads(
-        (FAV_FIXTURES / "list-detail/responses/success.json").read_bytes()
-    )["data"]
+    source = json.loads((FAV_FIXTURES / "list-detail/responses/success.json").read_bytes())["data"]
     source["medias"] = None
     assert FavListDetailData.model_validate(source).medias == []
     source["info"]["id"] = "1052622027"
@@ -250,18 +246,12 @@ def test_fav_fixture_hashes_are_recorded():
 def test_complete_fav_module_mapping():
     inventory = json.loads((ROOT / "migration/generated/inventory.json").read_bytes())
     mapping = json.loads((ROOT / "migration/python-api.json").read_bytes())
-    expected = {
-        method["name"] for method in inventory["methods"] if method["domain"] == "fav"
-    }
+    expected = {method["name"] for method in inventory["methods"] if method["domain"] == "fav"}
     implemented = {
         api["python"].rsplit(".", 1)[1]
         for api in mapping["apis"]
-        if api["python"].startswith("AsyncBpiClient.fav.")
-        and api["status"] == "implemented"
+        if api["python"].startswith("AsyncBpiClient.fav.") and api["status"] == "implemented"
     }
     assert len(expected) == 13
     assert implemented == expected
-    assert all(
-        inspect.iscoroutinefunction(getattr(FavClient, name, None))
-        for name in expected
-    )
+    assert all(inspect.iscoroutinefunction(getattr(FavClient, name, None)) for name in expected)

@@ -69,8 +69,8 @@ def read_contracts(root: Path) -> tuple[list[Record], list[Path]]:
                 "requests": [data["request"]]
                 if "request" in data
                 else [step["contract"]["request"] for step in data["steps"]],
-            "steps": data.get("steps", []),
-            "cases": data.get("cases", []),
+                "steps": data.get("steps", []),
+                "cases": data.get("cases", []),
                 "fixtures": fixtures,
                 "provenance": data.get("provenance", {}),
                 "migration_status": "not_generated",

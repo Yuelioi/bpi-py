@@ -110,13 +110,9 @@ class CommentClient:
     ) -> JsonValue:
         form = action_form(comment_type, oid, rpid, action)
         form["csrf"] = self._client.csrf()
-        return await self._client._post_payload(
-            path, {}, _OPTIONAL_JSON, form=form, optional=True
-        )
+        return await self._client._post_payload(path, {}, _OPTIONAL_JSON, form=form, optional=True)
 
-    async def delete(
-        self, *, comment_type: CommentType | int, oid: int, rpid: int
-    ) -> JsonValue:
+    async def delete(self, *, comment_type: CommentType | int, oid: int, rpid: int) -> JsonValue:
         form = delete_form(comment_type, oid, rpid)
         form["csrf"] = self._client.csrf()
         return await self._client._post_payload(

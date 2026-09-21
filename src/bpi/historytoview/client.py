@@ -71,9 +71,7 @@ class HistoryToViewClient:
             "/x/v2/history/shadow/set", {}, _JSON, form=form, optional=True
         )
 
-    async def add_toview(
-        self, *, aid: int | None = None, bvid: str | None = None
-    ) -> JsonValue:
+    async def add_toview(self, *, aid: int | None = None, bvid: str | None = None) -> JsonValue:
         form = toview_add_form(aid, bvid, self._client.csrf())
         return await self._client._post_payload(
             "/x/v2/history/toview/add", {}, _JSON, form=form, optional=True
