@@ -1,0 +1,2 @@
+tests/generated_reads/fixtures/** text eol=lf
+tests/sdk/fixtures/** text eol=lf

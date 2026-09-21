@@ -3,14 +3,14 @@
   "source_repository": "https://github.com/Yuelioi/bpi-rs",
   "sha256": {
     "login/nav/contract.json": "6cd4d55e0125cfb04485bc6889623de78666980d1b47c7cd4e20f6e400c3cc24",
-    "login/nav/responses/anonymous.error.json": "b336957f8fb5be737a047a5cd3fe189ffbc7d8a3a70ebe7d7a1d644b9fe82854",
-    "login/nav/responses/normal.success.json": "2ec8e2e0537f338b33deabe127ef213410c7ede37cb839c5611ae7bd79b2d841",
-    "login/nav/responses/vip.success.json": "6182f8168c88ef7f5ef1518ff41ff61d40b51cc9c64188e5abdaac736b918457",
-    "video/info-read/pagelist/contract.json": "0e7182bf567be025e37287ab808f9f589178165b8fb577b09edbc33db62371fa",
-    "video/info-read/pagelist/responses/success.json": "65c0abde3061ffdd73aaca412b86356d5d285f82e61bb239762d9489a976c7cb",
-    "video/info-read/view/contract.json": "e5971edf5e488dc43eb2a0824c27e34bf80d5006dbdf79b895c2d475bfcc880a",
-    "video/info-read/view/responses/success.json": "5c41ec15f8efeabcbdf4181f644ccbc6675c3ed967f9ae3b520398117d2d4492",
+    "login/nav/responses/anonymous.error.json": "882edadad9cd19d0fc6e3bdeea75d24094698966733c412e7dc64a3955b9f3a8",
+    "login/nav/responses/normal.success.json": "edb3582960424cae2e070201f4d62cf578c20d076f0695d4edd67031b6b9906c",
+    "login/nav/responses/vip.success.json": "d586654ff3fcec0f4bebd8d10fa9db829dadd589424421c6056d3339264dbf55",
+    "video/info-read/pagelist/contract.json": "b92a292aaab31068fa502cf6aa218ea2f6d376feb35d8ac273a3afbe2afcbc5b",
+    "video/info-read/pagelist/responses/success.json": "f4a70f2c14cfb1d4d4d9a83ba7697b0e2e78730c3ac692fe4fc91e15a0b7c209",
+    "video/info-read/view/contract.json": "3b531a5e64669cb79cfd0aa6d307cc00c69721e7a124246a92dada3152e15691",
+    "video/info-read/view/responses/success.json": "9e0917ce19ffb5b40319d67d6a380f4c1f372ae1999d343c164d7771b2b9ea50",
     "video/playurl/play-url/contract.json": "accc4e501f8f6e5ec33f693f4174dbbac29bad6f7297ce79ae4c34a8d88dfe42",
-    "video/playurl/play-url/responses/success.json": "9bceb5fb2b4bc941ce4e71e33afa97e445d8fb2c515849f2b920ddc0f06c9aaa"
+    "video/playurl/play-url/responses/success.json": "f91a4a1a7d0ed9d7b1ab47c00c2ad756ce828e117d4a79217a564c6d92a811d0"
   }
 }
