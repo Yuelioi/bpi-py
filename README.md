@@ -1,6 +1,11 @@
 # bpi-py
 
-[PyPI](https://pypi.org/project/bpi-py/) · [bpi-rs](https://github.com/Yuelioi/bpi-rs) · [bpi-go](https://github.com/Yuelioi/bpi-go)
+## 相关项目
+
+- [`bpi-rs`](https://github.com/Yuelioi/bpi-rs)：Rust 版本。
+- [`bpi-go`](https://github.com/Yuelioi/bpi-go)：Go 版本。
+
+包地址：[`PyPI`](https://pypi.org/project/bpi-py/)
 
 一个面向 Python 的异步 Bilibili API SDK。
 
