@@ -1,0 +1,86 @@
+{
+  "schema_version": 2,
+  "name": "login.daily_reward",
+  "module": "login",
+  "batch": "daily-reward",
+  "endpoint": "daily-reward",
+  "risk": "authenticated-read",
+  "status": "promoted",
+  "profiles": [
+    "anonymous",
+    "normal",
+    "vip"
+  ],
+  "request": {
+    "method": "GET",
+    "url": "https://api.bilibili.com/x/member/web/exp/reward",
+    "query": {},
+    "required_headers": [
+      "user-agent",
+      "referer",
+      "origin"
+    ],
+    "headers": {},
+    "auth": {
+      "requires": []
+    }
+  },
+  "sanitize": {
+    "preset": [],
+    "replace": {},
+    "drop": [],
+    "keep": []
+  },
+  "provenance": {
+    "source": "local_probe_output",
+    "privacy": "normal success response contains only reward booleans and coin experience",
+    "tool": "bpi-probe",
+    "tool_version": "0.2.0"
+  },
+  "cases": [
+    {
+      "name": "anonymous",
+      "profile": "anonymous",
+      "auth": {
+        "requires": []
+      },
+      "response": {
+        "http_status": 412,
+        "fixture_kind": "local_probe_blocked",
+        "error": "risk_control"
+      }
+    },
+    {
+      "name": "normal",
+      "profile": "normal",
+      "auth": {
+        "profile": "normal",
+        "requires": [
+          "cookie"
+        ]
+      },
+      "response": {
+        "http_status": 200,
+        "api_code": 0,
+        "fixture": "responses/normal.success.json",
+        "fixture_kind": "sanitized_probe",
+        "rust_model": "LoginDailyReward"
+      }
+    },
+    {
+      "name": "vip",
+      "profile": "vip",
+      "auth": {
+        "profile": "vip",
+        "requires": [
+          "cookie"
+        ]
+      },
+      "response": {
+        "http_status": 412,
+        "fixture_kind": "local_probe_blocked",
+        "error": "risk_control"
+      }
+    }
+  ]
+}

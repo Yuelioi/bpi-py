@@ -1,0 +1,19 @@
+{
+  "source_commit": "4b8d49126d34c32b0067d93d87976c3a7f97b4c5",
+  "model_names": {"src/video/model.rs:VideoTag": "VideoDetailTag"},
+  "external_models": {
+    "src/video/model.rs:VideoView": "bpi.video.models:VideoView",
+    "src/video/model.rs:VideoOwner": "bpi.video.models:VideoOwner",
+    "src/video/model.rs:VideoStat": "bpi.video.models:VideoStat"
+  },
+  "endpoints": [
+    {"contract": "video.detail", "domain": "video", "method": "detail", "models_file": "src/video/model.rs", "video_id": true, "params": [{"name": "need_elec", "kind": "bool", "encoding": "01", "optional": true}]},
+    {"contract": "video.related_videos", "domain": "video", "method": "related_videos", "models_file": "src/video/recommend.rs", "video_id": true, "params": []},
+    {"contract": "video.interactive_video_info", "domain": "video", "method": "interactive_video_info", "models_file": "src/video/interact_video.rs", "video_id": true, "params": [{"name": "graph_version", "min": 1}, {"name": "edge_id", "min": 1, "optional": true}]},
+    {"contract": "video.collection.series_info", "domain": "video", "method": "series_info", "models_file": "src/video/collection/info.rs", "params": [{"name": "series_id", "min": 1}]},
+    {"contract": "video.collection.series_archives", "domain": "video", "method": "series_archives", "models_file": "src/video/collection/info.rs", "params": [{"name": "mid", "min": 1}, {"name": "series_id", "min": 1}, {"name": "only_normal", "kind": "bool", "encoding": "truefalse", "optional": true}, {"name": "sort", "kind": "str", "choices": ["asc", "desc"], "optional": true}, {"name": "page_num", "wire": "pn", "min": 1, "optional": true}, {"name": "page_size", "wire": "ps", "min": 1, "optional": true}]},
+    {"contract": "video.collection.seasons_archives_list", "domain": "video", "method": "seasons_archives_list", "models_file": "src/video/collection/info.rs", "params": [{"name": "mid", "min": 1}, {"name": "season_id", "min": 1}, {"name": "page_num", "min": 1, "default": 1}, {"name": "page_size", "min": 1, "default": 20}, {"name": "sort_reverse", "kind": "bool", "encoding": "truefalse", "optional": true}]},
+    {"contract": "video.collection.home_seasons_series", "domain": "video", "method": "home_seasons_series", "models_file": "src/video/collection/info.rs", "params": [{"name": "mid", "min": 1}, {"name": "page_num", "min": 1, "default": 1}, {"name": "page_size", "min": 1, "default": 10}]},
+    {"contract": "video.collection.seasons_series_list", "domain": "video", "method": "seasons_series_list", "models_file": "src/video/collection/info.rs", "params": [{"name": "mid", "min": 1}, {"name": "page_num", "min": 1, "optional": true}, {"name": "page_size", "min": 1, "optional": true}]}
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": 2,
+  "name": "login.vip_info",
+  "module": "login",
+  "batch": "vip-info",
+  "endpoint": "vip-info",
+  "risk": "authenticated-read",
+  "status": "promoted",
+  "profiles": [
+    "anonymous",
+    "normal",
+    "vip"
+  ],
+  "request": {
+    "method": "GET",
+    "url": "https://api.bilibili.com/x/vip/web/user/info",
+    "query": {},
+    "required_headers": [
+      "user-agent",
+      "referer",
+      "origin"
+    ],
+    "headers": {},
+    "auth": {
+      "requires": []
+    }
+  },
+  "sanitize": {
+    "preset": [
+      "account",
+      "private_profile"
+    ],
+    "replace": {
+      "$.data.mid": 1000001
+    },
+    "drop": [],
+    "keep": [
+      "$.data.vip_type",
+      "$.data.vip_status",
+      "$.data.vip_due_date"
+    ]
+  },
+  "provenance": {
+    "source": "local_probe_output",
+    "tool": "bpi-probe",
+    "tool_version": "0.2.0",
+    "privacy": "private account fields sanitized before commit"
+  },
+  "cases": [
+    {
+      "name": "anonymous",
+      "profile": "anonymous",
+      "auth": {
+        "requires": []
+      },
+      "response": {
+        "api_code": -101,
+        "fixture": "responses/anonymous.error.json",
+        "fixture_kind": "sanitized_probe",
+        "error": "requires_login"
+      }
+    },
+    {
+      "name": "normal",
+      "profile": "normal",
+      "auth": {
+        "profile": "normal",
+        "requires": [
+          "cookie"
+        ]
+      },
+      "response": {
+        "api_code": 0,
+        "fixture": "responses/normal.success.json",
+        "fixture_kind": "sanitized_probe",
+        "rust_model": "LoginVipInfo"
+      }
+    },
+    {
+      "name": "vip",
+      "profile": "vip",
+      "auth": {
+        "profile": "vip",
+        "requires": [
+          "cookie"
+        ]
+      },
+      "response": {
+        "api_code": 0,
+        "fixture": "responses/vip.success.json",
+        "fixture_kind": "sanitized_probe",
+        "rust_model": "LoginVipInfo"
+      }
+    }
+  ]
+}

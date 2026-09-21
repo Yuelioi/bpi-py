@@ -1,0 +1,21 @@
+{
+  "source_commit": "4b8d49126d34c32b0067d93d87976c3a7f97b4c5",
+  "endpoints": [
+    {"contract":"audio.info","domain":"audio","method":"info","host":"www.bilibili.com","models_file":"src/audio/info.rs","params":[{"name":"sid","min":1}]},
+    {"contract":"audio.tags","domain":"audio","method":"tags","host":"www.bilibili.com","models_file":"src/audio/info.rs","params":[{"name":"sid","min":1}]},
+    {"contract":"audio.members","domain":"audio","method":"members","host":"www.bilibili.com","models_file":"src/audio/info.rs","params":[{"name":"sid","min":1}]},
+    {"contract":"audio.lyric","domain":"audio","method":"lyric","host":"www.bilibili.com","models_file":"src/audio/info.rs","params":[{"name":"sid","min":1}]},
+    {"contract":"audio.status_number","domain":"audio","method":"status_number","host":"www.bilibili.com","models_file":"src/audio/status_number.rs","params":[{"name":"sid","min":1}]},
+    {"contract":"audio.collection_status","domain":"audio","method":"collection_status","host":"www.bilibili.com","models_file":"src/audio/action.rs","params":[{"name":"sid","min":1}]},
+    {"contract":"audio.coin_count","domain":"audio","method":"coin_count","host":"www.bilibili.com","models_file":"src/audio/action.rs","params":[{"name":"sid","min":1}]},
+    {"contract":"audio.stream_url_web","domain":"audio","method":"stream_url_web","host":"www.bilibili.com","models_file":"src/audio/musicstream_url.rs","params":[{"name":"sid","min":1},{"name":"quality","min":0,"choices":[0,1,2,3],"default":2},{"name":"privilege","min":1,"default":2}]},
+    {"contract":"audio.stream_url","domain":"audio","method":"stream_url","models_file":"src/audio/musicstream_url.rs","params":[{"name":"song_id","wire":"songid","min":1},{"name":"quality","min":0,"choices":[0,1,2,3]},{"name":"privilege","min":1,"default":2},{"name":"mid","min":1,"default":2},{"name":"platform","kind":"str","nonblank":true,"default":"android"}]},
+    {"contract":"audio.collections_list","domain":"audio","method":"collections_list","host":"www.bilibili.com","models_file":"src/audio/music_list.rs","params":[{"name":"page","wire":"pn","min":1},{"name":"page_size","wire":"ps","min":1}]},
+    {"contract":"audio.collection_info","domain":"audio","method":"collection_info","host":"www.bilibili.com","optional_payload":true,"models_file":"src/audio/music_list.rs","params":[{"name":"sid","min":1}]},
+    {"contract":"audio.hot_menu","domain":"audio","method":"hot_menu","host":"www.bilibili.com","models_file":"src/audio/music_list.rs","params":[{"name":"page","wire":"pn","min":1},{"name":"page_size","wire":"ps","min":1}]},
+    {"contract":"audio.rank_menu","domain":"audio","method":"rank_menu","host":"www.bilibili.com","models_file":"src/audio/music_list.rs","params":[{"name":"page","wire":"pn","min":1},{"name":"page_size","wire":"ps","min":1}]},
+    {"contract":"audio.rank_period","domain":"audio","method":"rank_period","csrf":"optional","models_file":"src/audio/rank.rs","params":[{"name":"list_type","min":1}]},
+    {"contract":"audio.rank_detail","domain":"audio","method":"rank_detail","csrf":"optional","models_file":"src/audio/rank.rs","params":[{"name":"list_id","min":1}]},
+    {"contract":"audio.rank_music_list","domain":"audio","method":"rank_music_list","csrf":"optional","models_file":"src/audio/rank.rs","params":[{"name":"list_id","min":1}]}
+  ]
+}

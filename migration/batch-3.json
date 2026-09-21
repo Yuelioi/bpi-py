@@ -1,0 +1,16 @@
+{
+  "source_commit": "4b8d49126d34c32b0067d93d87976c3a7f97b4c5",
+  "model_defaults": {"BangumiMedia.rating": {"count": 0, "score": 0.0}},
+  "endpoints": [
+    {"contract": "video.desc", "domain": "video", "method": "desc", "models_file": "src/video/model.rs", "video_id": true, "params": []},
+    {"contract": "video.tags", "domain": "video", "method": "tags", "models_file": "src/video/tags.rs", "video_id": true, "params": [{"name": "cid", "min": 1, "optional": true}]},
+    {"contract": "video.online_total", "domain": "video", "method": "online_total", "models_file": "src/video/online.rs", "video_id": true, "params": [{"name": "cid", "min": 1}]},
+    {"contract": "video.ai_summary", "domain": "video", "method": "ai_summary", "models_file": "src/video/summary.rs", "video_id": true, "params": [{"name": "cid", "min": 1}, {"name": "up_mid", "min": 1}]},
+    {"contract": "login.stat", "domain": "login", "method": "stat", "models_file": "src/login/model.rs", "params": []},
+    {"contract": "login.daily_reward", "domain": "login", "method": "daily_reward", "models_file": "src/login/model.rs", "params": []},
+    {"contract": "login.account_info", "domain": "login", "method": "account_info", "models_file": "src/login/model.rs", "params": []},
+    {"contract": "login.vip_info", "domain": "login", "method": "vip_info", "models_file": "src/login/model.rs", "params": []},
+    {"contract": "bangumi.info.review_user", "domain": "bangumi", "method": "info", "models_file": "src/bangumi/info.rs", "params": [{"name": "media_id", "min": 1}]},
+    {"contract": "bangumi.timeline", "domain": "bangumi", "method": "timeline", "models_file": "src/bangumi/timeline.rs", "params": [{"name": "types", "min": 1, "choices": [1, 3, 4]}, {"name": "before", "min": 0, "max": 7}, {"name": "after", "min": 0, "max": 7}]}
+  ]
+}

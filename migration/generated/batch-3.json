@@ -1,0 +1,1155 @@
+{
+  "source_commit": "4b8d49126d34c32b0067d93d87976c3a7f97b4c5",
+  "apis": [
+    {
+      "contract": "audio.info",
+      "python": "AsyncBpiClient.audio.info",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "AudioInfoData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "audio.tags",
+      "python": "AsyncBpiClient.audio.tags",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "list[AudioTag]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "audio.members",
+      "python": "AsyncBpiClient.audio.members",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "list[AudioMemberType]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "audio.lyric",
+      "python": "AsyncBpiClient.audio.lyric",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "str",
+      "risk": "public-read"
+    },
+    {
+      "contract": "audio.status_number",
+      "python": "AsyncBpiClient.audio.status_number",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "AudioStatusNumberData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "audio.collection_status",
+      "python": "AsyncBpiClient.audio.collection_status",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "bool",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "audio.coin_count",
+      "python": "AsyncBpiClient.audio.coin_count",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "int",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "audio.stream_url_web",
+      "python": "AsyncBpiClient.audio.stream_url_web",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "AudioStreamUrlWebData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "audio.stream_url",
+      "python": "AsyncBpiClient.audio.stream_url",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "AudioStreamUrlData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "audio.collections_list",
+      "python": "AsyncBpiClient.audio.collections_list",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "AudioCollectionsListData",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "audio.collection_info",
+      "python": "AsyncBpiClient.audio.collection_info",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "AudioCollection | None",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "audio.hot_menu",
+      "python": "AsyncBpiClient.audio.hot_menu",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "AudioHotMenuData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "audio.rank_menu",
+      "python": "AsyncBpiClient.audio.rank_menu",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "AudioRankMenuData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "audio.rank_period",
+      "python": "AsyncBpiClient.audio.rank_period",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "AudioRankPeriodData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "audio.rank_detail",
+      "python": "AsyncBpiClient.audio.rank_detail",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "AudioRankDetailData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "audio.rank_music_list",
+      "python": "AsyncBpiClient.audio.rank_music_list",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "generated",
+      "response": "AudioRankMusicListData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "bangumi.info.review_user",
+      "python": "AsyncBpiClient.bangumi.info",
+      "module": "src/bpi/_generated/bangumi_client.py",
+      "status": "generated",
+      "response": "BangumiInfoResult",
+      "risk": "public-read"
+    },
+    {
+      "contract": "bangumi.timeline",
+      "python": "AsyncBpiClient.bangumi.timeline",
+      "module": "src/bpi/_generated/bangumi_client.py",
+      "status": "generated",
+      "response": "list[BangumiTimelineDay]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "bangumi.info.season_detail_by_season_id",
+      "python": "AsyncBpiClient.bangumi.detail_by_season_id",
+      "module": "src/bpi/_generated/bangumi_client.py",
+      "status": "generated",
+      "response": "BangumiDetailResult",
+      "risk": "public-read"
+    },
+    {
+      "contract": "bangumi.info.season_detail_by_ep_id",
+      "python": "AsyncBpiClient.bangumi.detail_by_ep_id",
+      "module": "src/bpi/_generated/bangumi_client.py",
+      "status": "generated",
+      "response": "BangumiDetailResult",
+      "risk": "public-read"
+    },
+    {
+      "contract": "bangumi.info.season_section",
+      "python": "AsyncBpiClient.bangumi.sections",
+      "module": "src/bpi/_generated/bangumi_client.py",
+      "status": "generated",
+      "response": "BangumiSectionResult",
+      "risk": "public-read"
+    },
+    {
+      "contract": "cheese.info.season_detail_by_season_id",
+      "python": "AsyncBpiClient.cheese.info_by_season_id",
+      "module": "src/bpi/_generated/cheese_client.py",
+      "status": "generated",
+      "response": "CourseInfo",
+      "risk": "public-read"
+    },
+    {
+      "contract": "cheese.info.season_detail_by_ep_id",
+      "python": "AsyncBpiClient.cheese.info_by_ep_id",
+      "module": "src/bpi/_generated/cheese_client.py",
+      "status": "generated",
+      "response": "CourseInfo",
+      "risk": "public-read"
+    },
+    {
+      "contract": "cheese.info.ep_list",
+      "python": "AsyncBpiClient.cheese.ep_list",
+      "module": "src/bpi/_generated/cheese_client.py",
+      "status": "generated",
+      "response": "CourseEpList",
+      "risk": "public-read"
+    },
+    {
+      "contract": "login.stat",
+      "python": "AsyncBpiClient.login.stat",
+      "module": "src/bpi/_generated/login_client.py",
+      "status": "generated",
+      "response": "LoginStats",
+      "risk": "private-read"
+    },
+    {
+      "contract": "login.daily_reward",
+      "python": "AsyncBpiClient.login.daily_reward",
+      "module": "src/bpi/_generated/login_client.py",
+      "status": "generated",
+      "response": "LoginDailyReward",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "login.account_info",
+      "python": "AsyncBpiClient.login.account_info",
+      "module": "src/bpi/_generated/login_client.py",
+      "status": "generated",
+      "response": "LoginAccountInfo",
+      "risk": "private-read"
+    },
+    {
+      "contract": "login.vip_info",
+      "python": "AsyncBpiClient.login.vip_info",
+      "module": "src/bpi/_generated/login_client.py",
+      "status": "generated",
+      "response": "LoginVipInfo",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "user.card",
+      "python": "AsyncBpiClient.user.card",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserCardProfile",
+      "risk": "public-read"
+    },
+    {
+      "contract": "user.cards",
+      "python": "AsyncBpiClient.user.cards",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "list[UserBatchCard]",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "user.infos",
+      "python": "AsyncBpiClient.user.infos",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "list[UserBatchInfo]",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "user.album_count",
+      "python": "AsyncBpiClient.user.album_count",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserAlbumCount",
+      "risk": "public-read"
+    },
+    {
+      "contract": "user.bangumi_follow_list",
+      "python": "AsyncBpiClient.user.bangumi_follow_list",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserBangumiFollowList",
+      "risk": "public-read"
+    },
+    {
+      "contract": "user.followings",
+      "python": "AsyncBpiClient.user.followings",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserFollowings",
+      "risk": "private-read"
+    },
+    {
+      "contract": "user.followers",
+      "python": "AsyncBpiClient.user.followers",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserFollowers",
+      "risk": "private-read"
+    },
+    {
+      "contract": "user.follow_tags",
+      "python": "AsyncBpiClient.user.follow_tags",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "list[UserFollowTag]",
+      "risk": "private-read"
+    },
+    {
+      "contract": "user.medal_wall",
+      "python": "AsyncBpiClient.user.medal_wall",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserMedalWall",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "user.name_to_uid",
+      "python": "AsyncBpiClient.user.name_to_uid",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserNameToUid",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "user.relation_stat",
+      "python": "AsyncBpiClient.user.relation_stat",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserRelationStat",
+      "risk": "public-read"
+    },
+    {
+      "contract": "user.nav_stat",
+      "python": "AsyncBpiClient.user.nav_stat",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserNavStat",
+      "risk": "public-read"
+    },
+    {
+      "contract": "user.up_stat",
+      "python": "AsyncBpiClient.user.up_stat",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserUpStat",
+      "risk": "public-read"
+    },
+    {
+      "contract": "user.space_info",
+      "python": "AsyncBpiClient.user.space_info",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserSpaceProfile",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "user.space_notice",
+      "python": "AsyncBpiClient.user.space_notice",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserSpaceNotice",
+      "risk": "public-read"
+    },
+    {
+      "contract": "user.uploaded_videos",
+      "python": "AsyncBpiClient.user.uploaded_videos",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "generated",
+      "response": "UserUploadedVideos",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.desc",
+      "python": "AsyncBpiClient.video.desc",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "str",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.tags",
+      "python": "AsyncBpiClient.video.tags",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "list[VideoTag]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.online_total",
+      "python": "AsyncBpiClient.video.online_total",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "OnlineTotalResponseData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.ai_summary",
+      "python": "AsyncBpiClient.video.ai_summary",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "AiSummaryResponseData",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "video.detail",
+      "python": "AsyncBpiClient.video.detail",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "VideoDetail",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.related_videos",
+      "python": "AsyncBpiClient.video.related_videos",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "list[RelatedVideo]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.interactive_video_info",
+      "python": "AsyncBpiClient.video.interactive_video_info",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "InteractiveVideoInfoResponseData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.collection.series_info",
+      "python": "AsyncBpiClient.video.series_info",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "GetSeriesData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.collection.series_archives",
+      "python": "AsyncBpiClient.video.series_archives",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "GetSeriesArchivesData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.collection.seasons_archives_list",
+      "python": "AsyncBpiClient.video.seasons_archives_list",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "GetSeasonsArchivesData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.collection.home_seasons_series",
+      "python": "AsyncBpiClient.video.home_seasons_series",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "GetSeasonsSeriesData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.collection.seasons_series_list",
+      "python": "AsyncBpiClient.video.seasons_series_list",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "GetSeasonsSeriesData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.player_info_v2",
+      "python": "AsyncBpiClient.video.player_info_v2",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "PlayerInfoResponseData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.homepage_recommendations",
+      "python": "AsyncBpiClient.video.homepage_recommendations",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "generated",
+      "response": "RcmdFeedResponseData",
+      "risk": "public-read"
+    }
+  ],
+  "cases": [
+    {
+      "contract": "audio.info",
+      "contract_path": "tests/contracts/audio/info/contract.json",
+      "domain": "audio",
+      "method": "info",
+      "kwargs": {
+        "sid": 13603
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.tags",
+      "contract_path": "tests/contracts/audio/tags/contract.json",
+      "domain": "audio",
+      "method": "tags",
+      "kwargs": {
+        "sid": 13603
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.members",
+      "contract_path": "tests/contracts/audio/members/contract.json",
+      "domain": "audio",
+      "method": "members",
+      "kwargs": {
+        "sid": 13603
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.lyric",
+      "contract_path": "tests/contracts/audio/lyric/contract.json",
+      "domain": "audio",
+      "method": "lyric",
+      "kwargs": {
+        "sid": 13603
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.status_number",
+      "contract_path": "tests/contracts/audio/status-number/contract.json",
+      "domain": "audio",
+      "method": "status_number",
+      "kwargs": {
+        "sid": 13603
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.collection_status",
+      "contract_path": "tests/contracts/audio/collection-status/contract.json",
+      "domain": "audio",
+      "method": "collection_status",
+      "kwargs": {
+        "sid": 13603
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.coin_count",
+      "contract_path": "tests/contracts/audio/coin-count/contract.json",
+      "domain": "audio",
+      "method": "coin_count",
+      "kwargs": {
+        "sid": 13603
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.stream_url_web",
+      "contract_path": "tests/contracts/audio/stream-url-web/contract.json",
+      "domain": "audio",
+      "method": "stream_url_web",
+      "kwargs": {
+        "sid": 13603,
+        "quality": 2,
+        "privilege": 2
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.stream_url",
+      "contract_path": "tests/contracts/audio/stream-url/contract.json",
+      "domain": "audio",
+      "method": "stream_url",
+      "kwargs": {
+        "song_id": 15664,
+        "quality": 2,
+        "privilege": 2,
+        "mid": 2,
+        "platform": "android"
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.collections_list",
+      "contract_path": "tests/contracts/audio/collections-list/contract.json",
+      "domain": "audio",
+      "method": "collections_list",
+      "kwargs": {
+        "page": 1,
+        "page_size": 2
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.collection_info",
+      "contract_path": "tests/contracts/audio/collection-info/contract.json",
+      "domain": "audio",
+      "method": "collection_info",
+      "kwargs": {
+        "sid": 15967839
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.hot_menu",
+      "contract_path": "tests/contracts/audio/hot-menu/contract.json",
+      "domain": "audio",
+      "method": "hot_menu",
+      "kwargs": {
+        "page": 1,
+        "page_size": 3
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.rank_menu",
+      "contract_path": "tests/contracts/audio/rank-menu/contract.json",
+      "domain": "audio",
+      "method": "rank_menu",
+      "kwargs": {
+        "page": 1,
+        "page_size": 6
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.rank_period",
+      "contract_path": "tests/contracts/audio/rank-period/contract.json",
+      "domain": "audio",
+      "method": "rank_period",
+      "kwargs": {
+        "list_type": 2
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.rank_detail",
+      "contract_path": "tests/contracts/audio/rank-detail/contract.json",
+      "domain": "audio",
+      "method": "rank_detail",
+      "kwargs": {
+        "list_id": 76
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "audio.rank_music_list",
+      "contract_path": "tests/contracts/audio/rank-music-list/contract.json",
+      "domain": "audio",
+      "method": "rank_music_list",
+      "kwargs": {
+        "list_id": 76
+      },
+      "signed": false,
+      "batch": "audio"
+    },
+    {
+      "contract": "bangumi.info.review_user",
+      "contract_path": "tests/contracts/bangumi/info/review-user/contract.json",
+      "domain": "bangumi",
+      "method": "info",
+      "kwargs": {
+        "media_id": 28220978
+      },
+      "signed": false,
+      "batch": "3"
+    },
+    {
+      "contract": "bangumi.timeline",
+      "contract_path": "tests/contracts/bangumi/timeline/contract.json",
+      "domain": "bangumi",
+      "method": "timeline",
+      "kwargs": {
+        "types": 1,
+        "before": 3,
+        "after": 7
+      },
+      "signed": false,
+      "batch": "3"
+    },
+    {
+      "contract": "bangumi.info.season_detail_by_season_id",
+      "contract_path": "tests/contracts/bangumi/info/season-detail-season/contract.json",
+      "domain": "bangumi",
+      "method": "detail_by_season_id",
+      "kwargs": {
+        "season_id": 1172
+      },
+      "signed": false,
+      "batch": "bangumi"
+    },
+    {
+      "contract": "bangumi.info.season_detail_by_ep_id",
+      "contract_path": "tests/contracts/bangumi/info/season-detail-episode/contract.json",
+      "domain": "bangumi",
+      "method": "detail_by_ep_id",
+      "kwargs": {
+        "episode_id": 21265
+      },
+      "signed": false,
+      "batch": "bangumi"
+    },
+    {
+      "contract": "bangumi.info.season_section",
+      "contract_path": "tests/contracts/bangumi/info/season-section/contract.json",
+      "domain": "bangumi",
+      "method": "sections",
+      "kwargs": {
+        "season_id": 1172
+      },
+      "signed": false,
+      "batch": "bangumi"
+    },
+    {
+      "contract": "cheese.info.season_detail_by_season_id",
+      "contract_path": "tests/contracts/cheese/info/season-detail-season/contract.json",
+      "domain": "cheese",
+      "method": "info_by_season_id",
+      "kwargs": {
+        "season_id": 556
+      },
+      "signed": false,
+      "batch": "cheese"
+    },
+    {
+      "contract": "cheese.info.season_detail_by_ep_id",
+      "contract_path": "tests/contracts/cheese/info/season-detail-episode/contract.json",
+      "domain": "cheese",
+      "method": "info_by_ep_id",
+      "kwargs": {
+        "episode_id": 20767
+      },
+      "signed": false,
+      "batch": "cheese"
+    },
+    {
+      "contract": "cheese.info.ep_list",
+      "contract_path": "tests/contracts/cheese/info/ep-list/contract.json",
+      "domain": "cheese",
+      "method": "ep_list",
+      "kwargs": {
+        "season_id": 556,
+        "page_size": 50,
+        "page": 1
+      },
+      "signed": false,
+      "batch": "cheese"
+    },
+    {
+      "contract": "login.stat",
+      "contract_path": "tests/contracts/login/stat/contract.json",
+      "domain": "login",
+      "method": "stat",
+      "kwargs": {},
+      "signed": false,
+      "batch": "3"
+    },
+    {
+      "contract": "login.daily_reward",
+      "contract_path": "tests/contracts/login/daily-reward/contract.json",
+      "domain": "login",
+      "method": "daily_reward",
+      "kwargs": {},
+      "signed": false,
+      "batch": "3"
+    },
+    {
+      "contract": "login.account_info",
+      "contract_path": "tests/contracts/login/account-info/contract.json",
+      "domain": "login",
+      "method": "account_info",
+      "kwargs": {},
+      "signed": false,
+      "batch": "3"
+    },
+    {
+      "contract": "login.vip_info",
+      "contract_path": "tests/contracts/login/vip-info/contract.json",
+      "domain": "login",
+      "method": "vip_info",
+      "kwargs": {},
+      "signed": false,
+      "batch": "3"
+    },
+    {
+      "contract": "user.card",
+      "contract_path": "tests/contracts/user/public-read/card/contract.json",
+      "domain": "user",
+      "method": "card",
+      "kwargs": {
+        "mid": 2,
+        "photo": true
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.cards",
+      "contract_path": "tests/contracts/user/public-read/cards/contract.json",
+      "domain": "user",
+      "method": "cards",
+      "kwargs": {
+        "mids": [
+          2,
+          3
+        ]
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.infos",
+      "contract_path": "tests/contracts/user/public-read/infos/contract.json",
+      "domain": "user",
+      "method": "infos",
+      "kwargs": {
+        "mids": [
+          2,
+          3
+        ]
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.album_count",
+      "contract_path": "tests/contracts/user/public-read/album-count/contract.json",
+      "domain": "user",
+      "method": "album_count",
+      "kwargs": {
+        "mid": 2
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.bangumi_follow_list",
+      "contract_path": "tests/contracts/user/public-read/bangumi-follow-list/contract.json",
+      "domain": "user",
+      "method": "bangumi_follow_list",
+      "kwargs": {
+        "mid": 1000001,
+        "kind": 1,
+        "page": 1,
+        "page_size": 15
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.followings",
+      "contract_path": "tests/contracts/user/relation-read/followings/contract.json",
+      "domain": "user",
+      "method": "followings",
+      "kwargs": {
+        "mid": 2,
+        "order_type": "attention",
+        "page_size": 20,
+        "page": 1
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.followers",
+      "contract_path": "tests/contracts/user/relation-read/followers/contract.json",
+      "domain": "user",
+      "method": "followers",
+      "kwargs": {
+        "mid": 2,
+        "page_size": 20,
+        "page": 1
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.follow_tags",
+      "contract_path": "tests/contracts/user/relation-read/follow-tags/contract.json",
+      "domain": "user",
+      "method": "follow_tags",
+      "kwargs": {},
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.medal_wall",
+      "contract_path": "tests/contracts/user/public-read/medal-wall/contract.json",
+      "domain": "user",
+      "method": "medal_wall",
+      "kwargs": {
+        "target_id": 2
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.name_to_uid",
+      "contract_path": "tests/contracts/user/public-read/name-to-uid/contract.json",
+      "domain": "user",
+      "method": "name_to_uid",
+      "kwargs": {
+        "names": [
+          "LexBurner",
+          "\u67d0\u79d1\u5b66"
+        ]
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.relation_stat",
+      "contract_path": "tests/contracts/user/public-read/relation-stat/contract.json",
+      "domain": "user",
+      "method": "relation_stat",
+      "kwargs": {
+        "mid": 2
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.nav_stat",
+      "contract_path": "tests/contracts/user/public-read/nav-stat/contract.json",
+      "domain": "user",
+      "method": "nav_stat",
+      "kwargs": {
+        "mid": 2
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.up_stat",
+      "contract_path": "tests/contracts/user/public-read/up-stat/contract.json",
+      "domain": "user",
+      "method": "up_stat",
+      "kwargs": {
+        "mid": 456664753
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.space_info",
+      "contract_path": "tests/contracts/user/public-read/space-info/contract.json",
+      "domain": "user",
+      "method": "space_info",
+      "kwargs": {
+        "mid": 2
+      },
+      "signed": true,
+      "batch": "user"
+    },
+    {
+      "contract": "user.space_notice",
+      "contract_path": "tests/contracts/user/public-read/space-notice/contract.json",
+      "domain": "user",
+      "method": "space_notice",
+      "kwargs": {
+        "mid": 2
+      },
+      "signed": false,
+      "batch": "user"
+    },
+    {
+      "contract": "user.uploaded_videos",
+      "contract_path": "tests/contracts/user/public-read/uploaded-videos/contract.json",
+      "domain": "user",
+      "method": "uploaded_videos",
+      "kwargs": {
+        "mid": 2,
+        "order": "pubdate",
+        "tid": 0,
+        "page": 1,
+        "page_size": 30
+      },
+      "signed": true,
+      "batch": "user"
+    },
+    {
+      "contract": "video.desc",
+      "contract_path": "tests/contracts/video/info-read/desc/contract.json",
+      "domain": "video",
+      "method": "desc",
+      "kwargs": {
+        "bvid": "BV1xx411c7mD"
+      },
+      "signed": false,
+      "batch": "3"
+    },
+    {
+      "contract": "video.tags",
+      "contract_path": "tests/contracts/video/player-read/tags/contract.json",
+      "domain": "video",
+      "method": "tags",
+      "kwargs": {
+        "bvid": "BV1xx411c7mD",
+        "cid": 62131
+      },
+      "signed": false,
+      "batch": "3"
+    },
+    {
+      "contract": "video.online_total",
+      "contract_path": "tests/contracts/video/player-read/online-total/contract.json",
+      "domain": "video",
+      "method": "online_total",
+      "kwargs": {
+        "bvid": "BV1xx411c7mD",
+        "cid": 62131
+      },
+      "signed": false,
+      "batch": "3"
+    },
+    {
+      "contract": "video.ai_summary",
+      "contract_path": "tests/contracts/video/player-read/ai-summary/contract.json",
+      "domain": "video",
+      "method": "ai_summary",
+      "kwargs": {
+        "bvid": "BV1xx411c7mD",
+        "cid": 62131,
+        "up_mid": 928123
+      },
+      "signed": true,
+      "batch": "3"
+    },
+    {
+      "contract": "video.detail",
+      "contract_path": "tests/contracts/video/info-read/detail/contract.json",
+      "domain": "video",
+      "method": "detail",
+      "kwargs": {
+        "bvid": "BV1xx411c7mD",
+        "need_elec": false
+      },
+      "signed": false,
+      "batch": "4"
+    },
+    {
+      "contract": "video.related_videos",
+      "contract_path": "tests/contracts/video/player-read/related-videos/contract.json",
+      "domain": "video",
+      "method": "related_videos",
+      "kwargs": {
+        "bvid": "BV1xx411c7mD"
+      },
+      "signed": false,
+      "batch": "4"
+    },
+    {
+      "contract": "video.interactive_video_info",
+      "contract_path": "tests/contracts/video/player-read/interactive-info/contract.json",
+      "domain": "video",
+      "method": "interactive_video_info",
+      "kwargs": {
+        "aid": 114347430905959,
+        "graph_version": 1273647
+      },
+      "signed": false,
+      "batch": "4"
+    },
+    {
+      "contract": "video.collection.series_info",
+      "contract_path": "tests/contracts/video/collection-read/series-info/contract.json",
+      "domain": "video",
+      "method": "series_info",
+      "kwargs": {
+        "series_id": 250285
+      },
+      "signed": false,
+      "batch": "4"
+    },
+    {
+      "contract": "video.collection.series_archives",
+      "contract_path": "tests/contracts/video/collection-read/series-archives/contract.json",
+      "domain": "video",
+      "method": "series_archives",
+      "kwargs": {
+        "mid": 1000001,
+        "series_id": 250285,
+        "sort": "asc",
+        "page_num": 1,
+        "page_size": 10
+      },
+      "signed": false,
+      "batch": "4"
+    },
+    {
+      "contract": "video.collection.seasons_archives_list",
+      "contract_path": "tests/contracts/video/collection-read/seasons-archives-list/contract.json",
+      "domain": "video",
+      "method": "seasons_archives_list",
+      "kwargs": {
+        "mid": 1000001,
+        "season_id": 4294056,
+        "page_num": 1,
+        "page_size": 20,
+        "sort_reverse": false
+      },
+      "signed": true,
+      "batch": "4"
+    },
+    {
+      "contract": "video.collection.home_seasons_series",
+      "contract_path": "tests/contracts/video/collection-read/home-seasons-series/contract.json",
+      "domain": "video",
+      "method": "home_seasons_series",
+      "kwargs": {
+        "mid": 1000001,
+        "page_num": 1,
+        "page_size": 10
+      },
+      "signed": true,
+      "batch": "4"
+    },
+    {
+      "contract": "video.collection.seasons_series_list",
+      "contract_path": "tests/contracts/video/collection-read/seasons-series-list/contract.json",
+      "domain": "video",
+      "method": "seasons_series_list",
+      "kwargs": {
+        "mid": 1000001,
+        "page_num": 1,
+        "page_size": 5
+      },
+      "signed": true,
+      "batch": "4"
+    },
+    {
+      "contract": "video.player_info_v2",
+      "contract_path": "tests/contracts/video/player-read/player-info-v2/contract.json",
+      "domain": "video",
+      "method": "player_info_v2",
+      "kwargs": {
+        "bvid": "BV1xx411c7mD",
+        "cid": 62131
+      },
+      "signed": true,
+      "batch": "video"
+    },
+    {
+      "contract": "video.homepage_recommendations",
+      "contract_path": "tests/contracts/video/player-read/homepage-recommendations/contract.json",
+      "domain": "video",
+      "method": "homepage_recommendations",
+      "kwargs": {
+        "page_size": 12,
+        "fresh_idx": 1,
+        "fetch_row": 1
+      },
+      "signed": true,
+      "batch": "video"
+    }
+  ]
+}

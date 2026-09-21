@@ -1,0 +1,38 @@
+{
+  "source_commit": "4b8d49126d34c32b0067d93d87976c3a7f97b4c5",
+  "model_defaults": {
+    "UserBangumiFollow.latest_episode": {
+      "id": 0,
+      "index_show": "",
+      "cover": "",
+      "title": "",
+      "long_title": null,
+      "pub_time": "",
+      "duration": 0
+    },
+    "UserNavStat.channel": {"master": 0, "guest": 0},
+    "UserNavStat.favourite": {"master": 0, "guest": 0}
+  },
+  "external_models": {
+    "src/user/model.rs:UserSpaceNotice": "bpi.user.models:UserSpaceNotice",
+    "src/user/model.rs:UserUpStat": "bpi.user.models:UserUpStat"
+  },
+  "endpoints": [
+    {"contract":"user.card","domain":"user","method":"card","models_file":"src/user/model.rs","params":[{"name":"mid","min":1},{"name":"photo","kind":"bool","encoding":"truefalse","optional":true}]},
+    {"contract":"user.cards","domain":"user","method":"cards","host":"api.vc.bilibili.com","models_file":"src/user/model.rs","params":[{"name":"mids","wire":"uids","kind":"int_list","encoding":"csv","min":1}]},
+    {"contract":"user.infos","domain":"user","method":"infos","host":"api.vc.bilibili.com","models_file":"src/user/model.rs","params":[{"name":"mids","wire":"uids","kind":"int_list","encoding":"csv","min":1}]},
+    {"contract":"user.album_count","domain":"user","method":"album_count","host":"api.vc.bilibili.com","models_file":"src/user/model.rs","params":[{"name":"mid","wire":"uid","min":1}]},
+    {"contract":"user.bangumi_follow_list","domain":"user","method":"bangumi_follow_list","models_file":"src/user/model.rs","params":[{"name":"mid","wire":"vmid","min":1},{"name":"kind","wire":"type","min":1,"max":2,"default":1},{"name":"page","wire":"pn","min":1,"default":1},{"name":"page_size","wire":"ps","min":1,"max":30,"default":15}]},
+    {"contract":"user.followings","domain":"user","method":"followings","models_file":"src/user/model.rs","params":[{"name":"mid","wire":"vmid","min":1},{"name":"order_type","kind":"str","nonblank":true,"optional":true},{"name":"page_size","wire":"ps","min":1,"optional":true},{"name":"page","wire":"pn","min":1,"optional":true}]},
+    {"contract":"user.followers","domain":"user","method":"followers","models_file":"src/user/model.rs","params":[{"name":"mid","wire":"vmid","min":1},{"name":"page_size","wire":"ps","min":1,"optional":true},{"name":"page","wire":"pn","min":1,"optional":true},{"name":"offset","kind":"str","nonblank":true,"optional":true},{"name":"last_access_ts","min":0,"optional":true},{"name":"from_","wire":"from","kind":"str","nonblank":true,"optional":true}]},
+    {"contract":"user.follow_tags","domain":"user","method":"follow_tags","models_file":"src/user/model.rs","params":[]},
+    {"contract":"user.medal_wall","domain":"user","method":"medal_wall","host":"api.live.bilibili.com","models_file":"src/user/model.rs","params":[{"name":"target_id","min":1}]},
+    {"contract":"user.name_to_uid","domain":"user","method":"name_to_uid","models_file":"src/user/model.rs","params":[{"name":"names","kind":"str_list","encoding":"csv"}]},
+    {"contract":"user.relation_stat","domain":"user","method":"relation_stat","models_file":"src/user/model.rs","params":[{"name":"mid","wire":"vmid","min":1}]},
+    {"contract":"user.nav_stat","domain":"user","method":"nav_stat","models_file":"src/user/model.rs","params":[{"name":"mid","min":1}]},
+    {"contract":"user.up_stat","domain":"user","method":"up_stat","models_file":"src/user/model.rs","params":[{"name":"mid","min":1}]},
+    {"contract":"user.space_info","domain":"user","method":"space_info","models_file":"src/user/model.rs","params":[{"name":"mid","min":1}]},
+    {"contract":"user.space_notice","domain":"user","method":"space_notice","models_file":"src/user/model.rs","params":[{"name":"mid","min":1}]},
+    {"contract":"user.uploaded_videos","domain":"user","method":"uploaded_videos","models_file":"src/user/model.rs","params":[{"name":"mid","min":1},{"name":"order","kind":"str","choices":["pubdate","click","stow"],"default":"pubdate"},{"name":"tid","min":0,"default":0},{"name":"keyword","kind":"str","nonblank":true,"optional":true},{"name":"page","wire":"pn","min":1,"default":1},{"name":"page_size","wire":"ps","min":1,"default":30}]}
+  ]
+}

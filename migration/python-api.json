@@ -1,0 +1,3288 @@
+{
+  "schema_version": 1,
+  "source_commit": "4b8d49126d34c32b0067d93d87976c3a7f97b4c5",
+  "validation": "offline_contracts_and_source_derived_tests",
+  "fixture_provenance": "tests/sdk/fixtures/provenance.json",
+  "apis": [
+    {
+      "contract": "video.view",
+      "python": "AsyncBpiClient.video.view",
+      "module": "src/bpi/video/client.py",
+      "status": "implemented",
+      "response": "VideoView"
+    },
+    {
+      "contract": "video.pagelist",
+      "python": "AsyncBpiClient.video.page_list",
+      "module": "src/bpi/video/client.py",
+      "status": "implemented",
+      "response": "list[VideoPage]"
+    },
+    {
+      "contract": "video.play_url",
+      "python": "AsyncBpiClient.video.play_url",
+      "module": "src/bpi/video/client.py",
+      "status": "implemented",
+      "response": "PlayUrlResponseData"
+    },
+    {
+      "contract": "login.nav",
+      "python": "AsyncBpiClient.login.nav",
+      "module": "src/bpi/login/client.py",
+      "status": "implemented",
+      "response": "LoginNav"
+    },
+    {
+      "contract": "bangumi.info.review_user",
+      "python": "AsyncBpiClient.bangumi.info",
+      "module": "src/bpi/_generated/bangumi_client.py",
+      "status": "implemented",
+      "response": "BangumiInfoResult",
+      "risk": "public-read"
+    },
+    {
+      "contract": "bangumi.timeline",
+      "python": "AsyncBpiClient.bangumi.timeline",
+      "module": "src/bpi/_generated/bangumi_client.py",
+      "status": "implemented",
+      "response": "list[BangumiTimelineDay]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "login.stat",
+      "python": "AsyncBpiClient.login.stat",
+      "module": "src/bpi/_generated/login_client.py",
+      "status": "implemented",
+      "response": "LoginStats",
+      "risk": "private-read"
+    },
+    {
+      "contract": "login.daily_reward",
+      "python": "AsyncBpiClient.login.daily_reward",
+      "module": "src/bpi/_generated/login_client.py",
+      "status": "implemented",
+      "response": "LoginDailyReward",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "login.account_info",
+      "python": "AsyncBpiClient.login.account_info",
+      "module": "src/bpi/_generated/login_client.py",
+      "status": "implemented",
+      "response": "LoginAccountInfo",
+      "risk": "private-read"
+    },
+    {
+      "contract": "login.vip_info",
+      "python": "AsyncBpiClient.login.vip_info",
+      "module": "src/bpi/_generated/login_client.py",
+      "status": "implemented",
+      "response": "LoginVipInfo",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "video.desc",
+      "python": "AsyncBpiClient.video.desc",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "str",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.tags",
+      "python": "AsyncBpiClient.video.tags",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "list[VideoTag]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.online_total",
+      "python": "AsyncBpiClient.video.online_total",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "OnlineTotalResponseData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.ai_summary",
+      "python": "AsyncBpiClient.video.ai_summary",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "AiSummaryResponseData",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "video.detail",
+      "python": "AsyncBpiClient.video.detail",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "VideoDetail",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.related_videos",
+      "python": "AsyncBpiClient.video.related_videos",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "list[RelatedVideo]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.interactive_video_info",
+      "python": "AsyncBpiClient.video.interactive_video_info",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "InteractiveVideoInfoResponseData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.collection.series_info",
+      "python": "AsyncBpiClient.video.series_info",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "GetSeriesData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.collection.series_archives",
+      "python": "AsyncBpiClient.video.series_archives",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "GetSeriesArchivesData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.collection.seasons_archives_list",
+      "python": "AsyncBpiClient.video.seasons_archives_list",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "GetSeasonsArchivesData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.collection.home_seasons_series",
+      "python": "AsyncBpiClient.video.home_seasons_series",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "GetSeasonsSeriesData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.collection.seasons_series_list",
+      "python": "AsyncBpiClient.video.seasons_series_list",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "GetSeasonsSeriesData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.player_info_v2",
+      "python": "AsyncBpiClient.video.player_info_v2",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "PlayerInfoResponseData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.homepage_recommendations",
+      "python": "AsyncBpiClient.video.homepage_recommendations",
+      "module": "src/bpi/_generated/video_client.py",
+      "status": "implemented",
+      "response": "RcmdFeedResponseData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video.coin_status",
+      "python": "AsyncBpiClient.video.coin_status",
+      "module": "src/bpi/video/actions.py",
+      "status": "implemented",
+      "response": "VideoCoinStatusData",
+      "risk": "authenticated-read",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/video/action.rs",
+      "test": "tests/generated_reads/test_video_module.py"
+    },
+    {
+      "contract": "video.like",
+      "python": "AsyncBpiClient.video.like",
+      "module": "src/bpi/video/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/video/action.rs",
+      "test": "tests/generated_reads/test_video_module.py"
+    },
+    {
+      "contract": "video.coin",
+      "python": "AsyncBpiClient.video.coin",
+      "module": "src/bpi/video/actions.py",
+      "status": "implemented",
+      "response": "CoinData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/video/action.rs",
+      "test": "tests/generated_reads/test_video_module.py"
+    },
+    {
+      "contract": "video.favorite",
+      "python": "AsyncBpiClient.video.favorite",
+      "module": "src/bpi/video/actions.py",
+      "status": "implemented",
+      "response": "FavoriteData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/video/action.rs",
+      "test": "tests/generated_reads/test_video_module.py"
+    },
+    {
+      "contract": "video.collection.series.create",
+      "python": "AsyncBpiClient.video.create_collection_series",
+      "module": "src/bpi/video/actions.py",
+      "status": "implemented",
+      "response": "CreateSeriesResponseData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/video/collection/action.rs",
+      "test": "tests/generated_reads/test_video_module.py"
+    },
+    {
+      "contract": "video.collection.series.delete",
+      "python": "AsyncBpiClient.video.delete_collection_series",
+      "module": "src/bpi/video/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/video/collection/action.rs",
+      "test": "tests/generated_reads/test_video_module.py"
+    },
+    {
+      "contract": "video.collection.archives.delete",
+      "python": "AsyncBpiClient.video.delete_collection_archives",
+      "module": "src/bpi/video/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/video/collection/action.rs",
+      "test": "tests/generated_reads/test_video_module.py"
+    },
+    {
+      "contract": "video.collection.archives.add",
+      "python": "AsyncBpiClient.video.add_collection_archives",
+      "module": "src/bpi/video/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/video/collection/action.rs",
+      "test": "tests/generated_reads/test_video_module.py"
+    },
+    {
+      "contract": "video.collection.series.update",
+      "python": "AsyncBpiClient.video.update_collection_series",
+      "module": "src/bpi/video/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/video/collection/action.rs",
+      "test": "tests/generated_reads/test_video_module.py"
+    },
+    {
+      "contract": "video.watch_progress.report",
+      "python": "AsyncBpiClient.video.report_watch_progress",
+      "module": "src/bpi/video/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/video/report.rs",
+      "test": "tests/generated_reads/test_video_module.py"
+    },
+    {
+      "contract": "audio.info",
+      "python": "AsyncBpiClient.audio.info",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "AudioInfoData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.tags",
+      "python": "AsyncBpiClient.audio.tags",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "list[AudioTag]",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.members",
+      "python": "AsyncBpiClient.audio.members",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "list[AudioMemberType]",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.lyric",
+      "python": "AsyncBpiClient.audio.lyric",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "str",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.status_number",
+      "python": "AsyncBpiClient.audio.status_number",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "AudioStatusNumberData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.collection_status",
+      "python": "AsyncBpiClient.audio.collection_status",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "bool",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.coin_count",
+      "python": "AsyncBpiClient.audio.coin_count",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "int",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.stream_url_web",
+      "python": "AsyncBpiClient.audio.stream_url_web",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "AudioStreamUrlWebData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.stream_url",
+      "python": "AsyncBpiClient.audio.stream_url",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "AudioStreamUrlData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.collections_list",
+      "python": "AsyncBpiClient.audio.collections_list",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "AudioCollectionsListData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.collection_info",
+      "python": "AsyncBpiClient.audio.collection_info",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "AudioCollection | None",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.hot_menu",
+      "python": "AsyncBpiClient.audio.hot_menu",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "AudioHotMenuData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.rank_menu",
+      "python": "AsyncBpiClient.audio.rank_menu",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "AudioRankMenuData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.rank_period",
+      "python": "AsyncBpiClient.audio.rank_period",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "AudioRankPeriodData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.rank_detail",
+      "python": "AsyncBpiClient.audio.rank_detail",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "AudioRankDetailData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.rank_music_list",
+      "python": "AsyncBpiClient.audio.rank_music_list",
+      "module": "src/bpi/_generated/audio_client.py",
+      "status": "implemented",
+      "response": "AudioRankMusicListData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "audio.favorite",
+      "python": "AsyncBpiClient.audio.favorite",
+      "module": "src/bpi/audio/actions.py",
+      "status": "implemented",
+      "response": "PromptData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/audio/action.rs",
+      "source_sha256": "38a65958e5cd522b90e6279182171b9df8f329c09f911bfb49c01e33d4ef523c",
+      "test": "tests/audio/test_audio.py"
+    },
+    {
+      "contract": "audio.collect",
+      "python": "AsyncBpiClient.audio.collect",
+      "module": "src/bpi/audio/actions.py",
+      "status": "implemented",
+      "response": "bool",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/audio/action.rs",
+      "source_sha256": "38a65958e5cd522b90e6279182171b9df8f329c09f911bfb49c01e33d4ef523c",
+      "test": "tests/audio/test_audio.py"
+    },
+    {
+      "contract": "audio.coin",
+      "python": "AsyncBpiClient.audio.coin",
+      "module": "src/bpi/audio/actions.py",
+      "status": "implemented",
+      "response": "str",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/audio/action.rs",
+      "source_sha256": "38a65958e5cd522b90e6279182171b9df8f329c09f911bfb49c01e33d4ef523c",
+      "test": "tests/audio/test_audio.py"
+    },
+    {
+      "contract": "audio.rank.subscribe",
+      "python": "AsyncBpiClient.audio.subscribe_rank",
+      "module": "src/bpi/audio/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/audio/rank.rs",
+      "source_sha256": "010ba2f220e0b0c963594100cccf0e74e14523148c2b200e27159f245c435ac4",
+      "test": "tests/audio/test_audio.py"
+    },
+    {
+      "contract": "bangumi.info.season_detail_by_season_id",
+      "python": "AsyncBpiClient.bangumi.detail_by_season_id",
+      "module": "src/bpi/_generated/bangumi_client.py",
+      "status": "implemented",
+      "response": "BangumiDetailResult",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "bangumi.info.season_detail_by_ep_id",
+      "python": "AsyncBpiClient.bangumi.detail_by_ep_id",
+      "module": "src/bpi/_generated/bangumi_client.py",
+      "status": "implemented",
+      "response": "BangumiDetailResult",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "bangumi.info.season_section",
+      "python": "AsyncBpiClient.bangumi.sections",
+      "module": "src/bpi/_generated/bangumi_client.py",
+      "status": "implemented",
+      "response": "BangumiSectionResult",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "bangumi.info.detail",
+      "python": "AsyncBpiClient.bangumi.detail",
+      "module": "src/bpi/bangumi/client.py",
+      "status": "implemented",
+      "response": "BangumiDetailResult",
+      "risk": "public-read",
+      "validation": "offline_contract_reuse",
+      "source": "src/bangumi/client.rs",
+      "source_sha256": "009ee5573a989b826dbaa32bf56b3533aad912af6b876989d6bab608f151bbc2",
+      "test": "tests/bangumi/test_bangumi.py"
+    },
+    {
+      "contract": "bangumi.playurl",
+      "python": "AsyncBpiClient.bangumi.video_stream",
+      "module": "src/bpi/bangumi/client.py",
+      "status": "implemented",
+      "response": "BangumiVideoStreamData",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/bangumi/client.rs",
+      "source_sha256": "009ee5573a989b826dbaa32bf56b3533aad912af6b876989d6bab608f151bbc2",
+      "test": "tests/bangumi/test_bangumi.py"
+    },
+    {
+      "contract": "bangumi.follow",
+      "python": "AsyncBpiClient.bangumi.follow",
+      "module": "src/bpi/bangumi/actions.py",
+      "status": "implemented",
+      "response": "BangumiFollowResult",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/bangumi/follow.rs",
+      "source_sha256": "74641380b74cd6a51910e68e8d9ea8bae8d0aa1cb156b18b7c98c202c9c51990",
+      "test": "tests/bangumi/test_bangumi.py"
+    },
+    {
+      "contract": "bangumi.unfollow",
+      "python": "AsyncBpiClient.bangumi.unfollow",
+      "module": "src/bpi/bangumi/actions.py",
+      "status": "implemented",
+      "response": "BangumiFollowResult",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/bangumi/follow.rs",
+      "source_sha256": "74641380b74cd6a51910e68e8d9ea8bae8d0aa1cb156b18b7c98c202c9c51990",
+      "test": "tests/bangumi/test_bangumi.py"
+    },
+    {
+      "contract": "cheese.info.season_detail_by_season_id",
+      "python": "AsyncBpiClient.cheese.info_by_season_id",
+      "module": "src/bpi/_generated/cheese_client.py",
+      "status": "implemented",
+      "response": "CourseInfo",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "cheese.info.season_detail_by_ep_id",
+      "python": "AsyncBpiClient.cheese.info_by_ep_id",
+      "module": "src/bpi/_generated/cheese_client.py",
+      "status": "implemented",
+      "response": "CourseInfo",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "cheese.info.ep_list",
+      "python": "AsyncBpiClient.cheese.ep_list",
+      "module": "src/bpi/_generated/cheese_client.py",
+      "status": "implemented",
+      "response": "CourseEpList",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "cheese.info",
+      "python": "AsyncBpiClient.cheese.info",
+      "module": "src/bpi/cheese/client.py",
+      "status": "implemented",
+      "response": "CourseInfo",
+      "risk": "public-read",
+      "validation": "offline_contract_reuse",
+      "source": "src/cheese/client.rs",
+      "source_sha256": "6ea2b1ed138d11d52c6976bc07e6d1c6e735b237a94ca7bdb84652d7c10eec70",
+      "test": "tests/cheese/test_cheese.py"
+    },
+    {
+      "contract": "cheese.playurl",
+      "python": "AsyncBpiClient.cheese.video_stream",
+      "module": "src/bpi/cheese/client.py",
+      "status": "implemented",
+      "response": "CourseVideoStreamData",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/cheese/client.rs",
+      "source_sha256": "6ea2b1ed138d11d52c6976bc07e6d1c6e735b237a94ca7bdb84652d7c10eec70",
+      "test": "tests/cheese/test_cheese.py"
+    },
+    {
+      "contract": "user.card",
+      "python": "AsyncBpiClient.user.card",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserCardProfile",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.cards",
+      "python": "AsyncBpiClient.user.cards",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "list[UserBatchCard]",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.infos",
+      "python": "AsyncBpiClient.user.infos",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "list[UserBatchInfo]",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.album_count",
+      "python": "AsyncBpiClient.user.album_count",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserAlbumCount",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.bangumi_follow_list",
+      "python": "AsyncBpiClient.user.bangumi_follow_list",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserBangumiFollowList",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.followings",
+      "python": "AsyncBpiClient.user.followings",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserFollowings",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.followers",
+      "python": "AsyncBpiClient.user.followers",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserFollowers",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.follow_tags",
+      "python": "AsyncBpiClient.user.follow_tags",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "list[UserFollowTag]",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.medal_wall",
+      "python": "AsyncBpiClient.user.medal_wall",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserMedalWall",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.name_to_uid",
+      "python": "AsyncBpiClient.user.name_to_uid",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserNameToUid",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.relation_stat",
+      "python": "AsyncBpiClient.user.relation_stat",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserRelationStat",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.nav_stat",
+      "python": "AsyncBpiClient.user.nav_stat",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserNavStat",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.up_stat",
+      "python": "AsyncBpiClient.user.up_stat",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserUpStat",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.space_info",
+      "python": "AsyncBpiClient.user.space_info",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserSpaceProfile",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.space_notice",
+      "python": "AsyncBpiClient.user.space_notice",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserSpaceNotice",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.uploaded_videos",
+      "python": "AsyncBpiClient.user.uploaded_videos",
+      "module": "src/bpi/_generated/user_client.py",
+      "status": "implemented",
+      "response": "UserUploadedVideos",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "user.relation.modify",
+      "python": "AsyncBpiClient.user.modify_relation",
+      "module": "src/bpi/user/actions.py",
+      "status": "implemented",
+      "response": "None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/user/relation/action.rs",
+      "source_sha256": "b1eaf94a7c1ea4d1ecdaa8649133ac1b808a548baa2694b88d027db377a20446",
+      "test": "tests/user/test_user.py"
+    },
+    {
+      "contract": "user.group.create",
+      "python": "AsyncBpiClient.user.create_group_tag",
+      "module": "src/bpi/user/actions.py",
+      "status": "implemented",
+      "response": "CreateTagResponseData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/user/relation/group.rs",
+      "source_sha256": "1d3735013c1535abc7eebc3bf2b220f63681660390d6e1a9e33388ca0c952404",
+      "test": "tests/user/test_user.py"
+    },
+    {
+      "contract": "user.group.update",
+      "python": "AsyncBpiClient.user.update_group_tag",
+      "module": "src/bpi/user/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/user/relation/group.rs",
+      "source_sha256": "1d3735013c1535abc7eebc3bf2b220f63681660390d6e1a9e33388ca0c952404",
+      "test": "tests/user/test_user.py"
+    },
+    {
+      "contract": "user.group.delete",
+      "python": "AsyncBpiClient.user.delete_group_tag",
+      "module": "src/bpi/user/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/user/relation/group.rs",
+      "source_sha256": "1d3735013c1535abc7eebc3bf2b220f63681660390d6e1a9e33388ca0c952404",
+      "test": "tests/user/test_user.py"
+    },
+    {
+      "contract": "user.group.users.add",
+      "python": "AsyncBpiClient.user.add_group_users_to_tags",
+      "module": "src/bpi/user/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/user/relation/group.rs",
+      "source_sha256": "1d3735013c1535abc7eebc3bf2b220f63681660390d6e1a9e33388ca0c952404",
+      "test": "tests/user/test_user.py"
+    },
+    {
+      "contract": "user.group.users.remove",
+      "python": "AsyncBpiClient.user.remove_group_users",
+      "module": "src/bpi/user/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/user/relation/group.rs",
+      "source_sha256": "1d3735013c1535abc7eebc3bf2b220f63681660390d6e1a9e33388ca0c952404",
+      "test": "tests/user/test_user.py"
+    },
+    {
+      "contract": "user.group.users.copy",
+      "python": "AsyncBpiClient.user.copy_group_users_to_tags",
+      "module": "src/bpi/user/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/user/relation/group.rs",
+      "source_sha256": "1d3735013c1535abc7eebc3bf2b220f63681660390d6e1a9e33388ca0c952404",
+      "test": "tests/user/test_user.py"
+    },
+    {
+      "contract": "user.group.users.move",
+      "python": "AsyncBpiClient.user.move_group_users_to_tags",
+      "module": "src/bpi/user/actions.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/user/relation/group.rs",
+      "source_sha256": "1d3735013c1535abc7eebc3bf2b220f63681660390d6e1a9e33388ca0c952404",
+      "test": "tests/user/test_user.py"
+    },
+    {
+      "contract": "user.space_notice.set",
+      "python": "AsyncBpiClient.user.set_space_notice",
+      "module": "src/bpi/user/actions.py",
+      "status": "implemented",
+      "response": "None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/user/space.rs",
+      "source_sha256": "61e22c7530f1dabb52d5bcc5a38e7a4439d8a976afab18f4304f710d45a21eb0",
+      "test": "tests/user/test_user.py"
+    },
+    {
+      "contract": "search.article",
+      "python": "AsyncBpiClient.search.article",
+      "module": "src/bpi/search/client.py",
+      "status": "implemented",
+      "response": "SearchData[list[Article]]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "search.bangumi",
+      "python": "AsyncBpiClient.search.bangumi",
+      "module": "src/bpi/search/client.py",
+      "status": "implemented",
+      "response": "SearchData[list[Bangumi]]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "search.bili_user",
+      "python": "AsyncBpiClient.search.bili_user",
+      "module": "src/bpi/search/client.py",
+      "status": "implemented",
+      "response": "SearchData[list[BiliUser]]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "search.live",
+      "python": "AsyncBpiClient.search.live",
+      "module": "src/bpi/search/client.py",
+      "status": "implemented",
+      "response": "SearchData[LiveData]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "search.live_room",
+      "python": "AsyncBpiClient.search.live_room",
+      "module": "src/bpi/search/client.py",
+      "status": "implemented",
+      "response": "SearchData[list[LiveRoom]]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "search.live_user",
+      "python": "AsyncBpiClient.search.live_user",
+      "module": "src/bpi/search/client.py",
+      "status": "implemented",
+      "response": "SearchData[list[LiveUser]]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "search.movie",
+      "python": "AsyncBpiClient.search.movie",
+      "module": "src/bpi/search/client.py",
+      "status": "implemented",
+      "response": "SearchData[list[Movie]]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "search.video",
+      "python": "AsyncBpiClient.search.video",
+      "module": "src/bpi/search/client.py",
+      "status": "implemented",
+      "response": "SearchData[list[Video]]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "search.default",
+      "python": "AsyncBpiClient.search.default",
+      "module": "src/bpi/search/client.py",
+      "status": "implemented",
+      "response": "DefaultSearchData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "search.suggest",
+      "python": "AsyncBpiClient.search.suggest",
+      "module": "src/bpi/search/client.py",
+      "status": "implemented",
+      "response": "SearchSuggest",
+      "risk": "public-read"
+    },
+    {
+      "contract": "search.hotwords",
+      "python": "AsyncBpiClient.search.hotwords",
+      "module": "src/bpi/search/client.py",
+      "status": "implemented",
+      "response": "HotWordDataResponse",
+      "risk": "public-read"
+    },
+    {
+      "contract": "fav.folder_info",
+      "python": "AsyncBpiClient.fav.folder_info",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "FavFolderInfo",
+      "risk": "private-read"
+    },
+    {
+      "contract": "fav.created_list",
+      "python": "AsyncBpiClient.fav.created_list",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "CreatedFolderListData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "fav.collected_list",
+      "python": "AsyncBpiClient.fav.collected_list",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "CollectedFolderListData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "fav.resource_infos",
+      "python": "AsyncBpiClient.fav.resource_infos",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "list[ResourceInfoItem]",
+      "risk": "private-read"
+    },
+    {
+      "contract": "fav.list_detail",
+      "python": "AsyncBpiClient.fav.list_detail",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "FavListDetailData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "fav.resource_ids",
+      "python": "AsyncBpiClient.fav.resource_ids",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "list[FavResourceIdItem]",
+      "risk": "private-read"
+    },
+    {
+      "contract": "fav.folder.add",
+      "python": "AsyncBpiClient.fav.add_folder",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "FavFolderInfo",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/fav/action.rs",
+      "source_sha256": "f3cebf9fe9746fbf7fde4686085ab0536027f95586180932b797243a553ed26c",
+      "test": "tests/fav/test_fav.py"
+    },
+    {
+      "contract": "fav.folder.edit",
+      "python": "AsyncBpiClient.fav.edit_folder",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "FavFolderInfo",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/fav/action.rs",
+      "source_sha256": "f3cebf9fe9746fbf7fde4686085ab0536027f95586180932b797243a553ed26c",
+      "test": "tests/fav/test_fav.py"
+    },
+    {
+      "contract": "fav.folder.delete",
+      "python": "AsyncBpiClient.fav.delete_folders",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "int",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/fav/action.rs",
+      "source_sha256": "f3cebf9fe9746fbf7fde4686085ab0536027f95586180932b797243a553ed26c",
+      "test": "tests/fav/test_fav.py"
+    },
+    {
+      "contract": "fav.resource.copy",
+      "python": "AsyncBpiClient.fav.copy_resources",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "int",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/fav/action.rs",
+      "source_sha256": "f3cebf9fe9746fbf7fde4686085ab0536027f95586180932b797243a553ed26c",
+      "test": "tests/fav/test_fav.py"
+    },
+    {
+      "contract": "fav.resource.move",
+      "python": "AsyncBpiClient.fav.move_resources",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "int",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/fav/action.rs",
+      "source_sha256": "f3cebf9fe9746fbf7fde4686085ab0536027f95586180932b797243a553ed26c",
+      "test": "tests/fav/test_fav.py"
+    },
+    {
+      "contract": "fav.resource.batch_delete",
+      "python": "AsyncBpiClient.fav.delete_resources",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "int",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/fav/action.rs",
+      "source_sha256": "f3cebf9fe9746fbf7fde4686085ab0536027f95586180932b797243a553ed26c",
+      "test": "tests/fav/test_fav.py"
+    },
+    {
+      "contract": "fav.resource.clean",
+      "python": "AsyncBpiClient.fav.clean_resources",
+      "module": "src/bpi/fav/client.py",
+      "status": "implemented",
+      "response": "int",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/fav/action.rs",
+      "source_sha256": "f3cebf9fe9746fbf7fde4686085ab0536027f95586180932b797243a553ed26c",
+      "test": "tests/fav/test_fav.py"
+    },
+    {
+      "contract": "historytoview.history_list",
+      "python": "AsyncBpiClient.historytoview.history_list",
+      "module": "src/bpi/historytoview/client.py",
+      "status": "implemented",
+      "response": "HistoryListData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "historytoview.history_shadow",
+      "python": "AsyncBpiClient.historytoview.history_shadow",
+      "module": "src/bpi/historytoview/client.py",
+      "status": "implemented",
+      "response": "bool",
+      "risk": "private-read"
+    },
+    {
+      "contract": "historytoview.toview_list",
+      "python": "AsyncBpiClient.historytoview.toview_list",
+      "module": "src/bpi/historytoview/client.py",
+      "status": "implemented",
+      "response": "ToViewListData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "historytoview.history.delete",
+      "python": "AsyncBpiClient.historytoview.delete_history",
+      "module": "src/bpi/historytoview/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/historytoview/history.rs",
+      "source_sha256": "f90652a43a1159980d50919b50dafccfda2bf6d9933462ddad34c3d232f8ace5",
+      "test": "tests/historytoview/test_historytoview.py"
+    },
+    {
+      "contract": "historytoview.history.clear",
+      "python": "AsyncBpiClient.historytoview.clear_history",
+      "module": "src/bpi/historytoview/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/historytoview/history.rs",
+      "source_sha256": "f90652a43a1159980d50919b50dafccfda2bf6d9933462ddad34c3d232f8ace5",
+      "test": "tests/historytoview/test_historytoview.py"
+    },
+    {
+      "contract": "historytoview.history.shadow_set",
+      "python": "AsyncBpiClient.historytoview.set_history_shadow",
+      "module": "src/bpi/historytoview/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/historytoview/history.rs",
+      "source_sha256": "f90652a43a1159980d50919b50dafccfda2bf6d9933462ddad34c3d232f8ace5",
+      "test": "tests/historytoview/test_historytoview.py"
+    },
+    {
+      "contract": "historytoview.toview.add",
+      "python": "AsyncBpiClient.historytoview.add_toview",
+      "module": "src/bpi/historytoview/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/historytoview/toview.rs",
+      "source_sha256": "696a74779a22432c0d5087fd46912c75cf21fbfedb1f0c4cc5238c893c0b9c33",
+      "test": "tests/historytoview/test_historytoview.py"
+    },
+    {
+      "contract": "historytoview.toview.delete",
+      "python": "AsyncBpiClient.historytoview.delete_toview",
+      "module": "src/bpi/historytoview/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/historytoview/toview.rs",
+      "source_sha256": "696a74779a22432c0d5087fd46912c75cf21fbfedb1f0c4cc5238c893c0b9c33",
+      "test": "tests/historytoview/test_historytoview.py"
+    },
+    {
+      "contract": "historytoview.toview.clear",
+      "python": "AsyncBpiClient.historytoview.clear_toview",
+      "module": "src/bpi/historytoview/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/historytoview/toview.rs",
+      "source_sha256": "696a74779a22432c0d5087fd46912c75cf21fbfedb1f0c4cc5238c893c0b9c33",
+      "test": "tests/historytoview/test_historytoview.py"
+    },
+    {
+      "contract": "live.area_list",
+      "python": "AsyncBpiClient.live.area_list",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "list[LiveParentArea]",
+      "risk": "public-read"
+    },
+    {
+      "contract": "live.room_info",
+      "python": "AsyncBpiClient.live.room_info",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "RoomInfoData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "live.stream",
+      "python": "AsyncBpiClient.live.stream",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "LiveStreamData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "live.recommend",
+      "python": "AsyncBpiClient.live.recommend",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "RecommendData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "live.version",
+      "python": "AsyncBpiClient.live.version",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "PcLiveVersionData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "live.gift_types",
+      "python": "AsyncBpiClient.live.gift_types",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "list[GiftTypeItem]",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "live.room_gift_list",
+      "python": "AsyncBpiClient.live.room_gift_list",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "RoomGiftData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "live.blind_gift_info",
+      "python": "AsyncBpiClient.live.blind_gift_info",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "BlindGiftData",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "live.danmu_info",
+      "python": "AsyncBpiClient.live.danmu_info",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "LiveDanmuInfoData",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "live.emoticons",
+      "python": "AsyncBpiClient.live.emoticons",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "EmoticonData",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "live.lottery_info",
+      "python": "AsyncBpiClient.live.lottery_info",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "LotteryInfoData",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "live.my_medals",
+      "python": "AsyncBpiClient.live.my_medals",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "MyMedalsData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "live.follow_up_list",
+      "python": "AsyncBpiClient.live.follow_up_list",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "FollowUpLiveData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "live.follow_up_web_list",
+      "python": "AsyncBpiClient.live.follow_up_web_list",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "LiveWebListData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "live.replay_list",
+      "python": "AsyncBpiClient.live.replay_list",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "ReplayListData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "live.guard_list",
+      "python": "AsyncBpiClient.live.guard_list",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "GuardListData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "live.silent_users",
+      "python": "AsyncBpiClient.live.silent_users",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "SilentUserListData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "live.banned_users",
+      "python": "AsyncBpiClient.live.banned_users",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "BannedUserListData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "live.shield_keywords",
+      "python": "AsyncBpiClient.live.shield_keywords",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "ShieldKeywordListData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "live.web_heart_beat",
+      "python": "AsyncBpiClient.live.web_heart_beat",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "HeartBeatData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "live.danmu.send",
+      "python": "AsyncBpiClient.live.live_send_danmu",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "SendDanmuData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/danmaku.rs",
+      "source_sha256": "2618519c6370ac0e4c63b8557b8f73b3c5a20a1f9a8807957cb4a5b702673cb9",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.room.create",
+      "python": "AsyncBpiClient.live.live_create_room",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "CreateRoomData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/manage.rs",
+      "source_sha256": "1f2de207921bc8579bb9c7608bd0a0b4769d2e6d09a7c8bcdf4043d19ef5fc31",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.room.update",
+      "python": "AsyncBpiClient.live.live_update_room_info",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "UpdateRoomData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/manage.rs",
+      "source_sha256": "1f2de207921bc8579bb9c7608bd0a0b4769d2e6d09a7c8bcdf4043d19ef5fc31",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.web_up_stream_addr",
+      "python": "AsyncBpiClient.live.live_fetch_web_up_stream_addr",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "WebUpStreamAddrData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/manage.rs",
+      "source_sha256": "1f2de207921bc8579bb9c7608bd0a0b4769d2e6d09a7c8bcdf4043d19ef5fc31",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.web_center_start",
+      "python": "AsyncBpiClient.live.live_web_center_start",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "StartLiveData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/manage.rs",
+      "source_sha256": "1f2de207921bc8579bb9c7608bd0a0b4769d2e6d09a7c8bcdf4043d19ef5fc31",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.stop",
+      "python": "AsyncBpiClient.live.live_stop",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "StopLiveData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/manage.rs",
+      "source_sha256": "1f2de207921bc8579bb9c7608bd0a0b4769d2e6d09a7c8bcdf4043d19ef5fc31",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.pre_live_info.update",
+      "python": "AsyncBpiClient.live.live_update_pre_live_info",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "UpdatePreLiveInfoData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/manage.rs",
+      "source_sha256": "1f2de207921bc8579bb9c7608bd0a0b4769d2e6d09a7c8bcdf4043d19ef5fc31",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.room_news.update",
+      "python": "AsyncBpiClient.live.live_update_room_news",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/manage.rs",
+      "source_sha256": "1f2de207921bc8579bb9c7608bd0a0b4769d2e6d09a7c8bcdf4043d19ef5fc31",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.silent_user.add",
+      "python": "AsyncBpiClient.live.live_add_silent_user",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/silent_user_manage.rs",
+      "source_sha256": "7237b8da1b8ca788e90f6df2b30868819a93657de1f1edde5385997fb4ed4a92",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.silent_user.delete",
+      "python": "AsyncBpiClient.live.live_del_block_user",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/silent_user_manage.rs",
+      "source_sha256": "7237b8da1b8ca788e90f6df2b30868819a93657de1f1edde5385997fb4ed4a92",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.banned_user.add",
+      "python": "AsyncBpiClient.live.live_add_banned_user",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/silent_user_manage.rs",
+      "source_sha256": "7237b8da1b8ca788e90f6df2b30868819a93657de1f1edde5385997fb4ed4a92",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.banned_user.delete",
+      "python": "AsyncBpiClient.live.live_del_banned_user",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/silent_user_manage.rs",
+      "source_sha256": "7237b8da1b8ca788e90f6df2b30868819a93657de1f1edde5385997fb4ed4a92",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.shield_keyword.add",
+      "python": "AsyncBpiClient.live.live_add_shield_keyword",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/silent_user_manage.rs",
+      "source_sha256": "7237b8da1b8ca788e90f6df2b30868819a93657de1f1edde5385997fb4ed4a92",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "live.shield_keyword.delete",
+      "python": "AsyncBpiClient.live.live_del_shield_keyword",
+      "module": "src/bpi/live/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/live/silent_user_manage.rs",
+      "source_sha256": "7237b8da1b8ca788e90f6df2b30868819a93657de1f1edde5385997fb4ed4a92",
+      "test": "tests/live/test_live.py"
+    },
+    {
+      "contract": "video_ranking.popular_list",
+      "python": "AsyncBpiClient.video_ranking.popular_list",
+      "module": "src/bpi/video_ranking/client.py",
+      "status": "implemented",
+      "response": "PopularListData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video_ranking.popular_series_list",
+      "python": "AsyncBpiClient.video_ranking.popular_series_list",
+      "module": "src/bpi/video_ranking/client.py",
+      "status": "implemented",
+      "response": "PopularSeriesListData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video_ranking.popular_series_one",
+      "python": "AsyncBpiClient.video_ranking.popular_series_one",
+      "module": "src/bpi/video_ranking/client.py",
+      "status": "implemented",
+      "response": "PopularSeriesOneData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video_ranking.popular_precious",
+      "python": "AsyncBpiClient.video_ranking.popular_precious",
+      "module": "src/bpi/video_ranking/client.py",
+      "status": "implemented",
+      "response": "PreciousVideoData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video_ranking.ranking_list",
+      "python": "AsyncBpiClient.video_ranking.ranking_list",
+      "module": "src/bpi/video_ranking/client.py",
+      "status": "implemented",
+      "response": "RankingListData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video_ranking.region_dynamic",
+      "python": "AsyncBpiClient.video_ranking.region_dynamic",
+      "module": "src/bpi/video_ranking/client.py",
+      "status": "implemented",
+      "response": "RegionArchivesData",
+      "risk": "authenticated-read"
+    },
+    {
+      "contract": "video_ranking.region_tag_dynamic",
+      "python": "AsyncBpiClient.video_ranking.region_tag_dynamic",
+      "module": "src/bpi/video_ranking/client.py",
+      "status": "implemented",
+      "response": "RegionArchivesData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video_ranking.region_newlist",
+      "python": "AsyncBpiClient.video_ranking.region_newlist",
+      "module": "src/bpi/video_ranking/client.py",
+      "status": "implemented",
+      "response": "RegionArchivesData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "video_ranking.region_newlist_rank",
+      "python": "AsyncBpiClient.video_ranking.region_newlist_rank",
+      "module": "src/bpi/video_ranking/client.py",
+      "status": "implemented",
+      "response": "NewListRankData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "opus.space_feed",
+      "python": "AsyncBpiClient.opus.space_feed",
+      "module": "src/bpi/opus/client.py",
+      "status": "implemented",
+      "response": "SpaceData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "wallet.info",
+      "python": "AsyncBpiClient.wallet.info",
+      "module": "src/bpi/wallet/client.py",
+      "status": "implemented",
+      "response": "UserWallet",
+      "risk": "private-read"
+    },
+    {
+      "contract": "clientinfo.ip",
+      "python": "AsyncBpiClient.clientinfo.ip",
+      "module": "src/bpi/clientinfo/client.py",
+      "status": "implemented",
+      "response": "IpInfo",
+      "risk": "public-read"
+    },
+    {
+      "contract": "activity.info",
+      "python": "AsyncBpiClient.activity.info",
+      "module": "src/bpi/activity/client.py",
+      "status": "implemented",
+      "response": "ActivityInfoData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "activity.list",
+      "python": "AsyncBpiClient.activity.list",
+      "module": "src/bpi/activity/client.py",
+      "status": "implemented",
+      "response": "ActivityListData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "activity.list_default",
+      "python": "AsyncBpiClient.activity.list_default",
+      "module": "src/bpi/activity/client.py",
+      "status": "implemented",
+      "response": "ActivityListData",
+      "risk": "public-read",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/activity/client.rs",
+      "source_sha256": "6b3b49b9edab06acba31546713cf1636165d5d0dedd7d025df7409a1c5eac512"
+    },
+    {
+      "contract": "web_widget.region_banner",
+      "python": "AsyncBpiClient.web_widget.region_banner",
+      "module": "src/bpi/web_widget/client.py",
+      "status": "implemented",
+      "response": "RegionBannerData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "web_widget.header_page",
+      "python": "AsyncBpiClient.web_widget.header_page",
+      "module": "src/bpi/web_widget/client.py",
+      "status": "implemented",
+      "response": "HeaderData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "web_widget.online",
+      "python": "AsyncBpiClient.web_widget.online",
+      "module": "src/bpi/web_widget/client.py",
+      "status": "implemented",
+      "response": "OnlineData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "vip.center_info",
+      "python": "AsyncBpiClient.vip.center_info",
+      "module": "src/bpi/vip/client.py",
+      "status": "implemented",
+      "response": "VipCenterData",
+      "risk": "public-read"
+    },
+    {
+      "contract": "vip.receive_privilege",
+      "python": "AsyncBpiClient.vip.receive_privilege",
+      "module": "src/bpi/vip/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/vip/action.rs",
+      "source_sha256": "ac085dd92fc841d399bd83e5f3975333d55dae8ba5a5348205176b55bb28feed"
+    },
+    {
+      "contract": "vip.add_experience",
+      "python": "AsyncBpiClient.vip.add_experience",
+      "module": "src/bpi/vip/client.py",
+      "status": "implemented",
+      "response": "VipExperienceData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/vip/action.rs",
+      "source_sha256": "ac085dd92fc841d399bd83e5f3975333d55dae8ba5a5348205176b55bb28feed"
+    },
+    {
+      "contract": "message.unread_count",
+      "python": "AsyncBpiClient.message.unread_count",
+      "module": "src/bpi/message/client.py",
+      "status": "implemented",
+      "response": "UnreadCountData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "message.reply_feed",
+      "python": "AsyncBpiClient.message.reply_feed",
+      "module": "src/bpi/message/client.py",
+      "status": "implemented",
+      "response": "ReplyFeedData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "message.single_unread",
+      "python": "AsyncBpiClient.message.single_unread",
+      "module": "src/bpi/message/client.py",
+      "status": "implemented",
+      "response": "SingleUnreadData",
+      "risk": "private-read"
+    },
+    {
+      "contract": "message.send",
+      "python": "AsyncBpiClient.message.send",
+      "module": "src/bpi/message/client.py",
+      "status": "implemented",
+      "response": "SendMsgData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/message/private_msg.rs",
+      "source_sha256": "c8fa771edf26027600a016df432cca631e577a42e69a7ea86a923e165a158e8c"
+    },
+    {
+      "contract": "misc.buvid3",
+      "python": "AsyncBpiClient.misc.buvid3",
+      "module": "src/bpi/misc/client.py",
+      "status": "implemented",
+      "response": "Buvid3Data",
+      "risk": "login-session",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "misc.buvid",
+      "python": "AsyncBpiClient.misc.buvid",
+      "module": "src/bpi/misc/client.py",
+      "status": "implemented",
+      "response": "BuvidData",
+      "risk": "login-session",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "misc.b23tv.short_link",
+      "python": "AsyncBpiClient.misc.b23_short_link",
+      "module": "src/bpi/misc/client.py",
+      "status": "implemented",
+      "response": "ShortLinkData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "misc.bili_ticket",
+      "python": "AsyncBpiClient.misc.bili_ticket",
+      "module": "src/bpi/misc/client.py",
+      "status": "implemented",
+      "response": "TicketData",
+      "risk": "login-session",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "misc.bili_ticket_string",
+      "python": "AsyncBpiClient.misc.bili_ticket_string",
+      "module": "src/bpi/misc/client.py",
+      "status": "implemented",
+      "response": "str",
+      "risk": "login-session",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/misc/client.rs",
+      "source_sha256": "a29cd7e1372058750297722898a59c5f1e95f14a56e6a56344accdaf4f29e4fe",
+      "test": "tests/misc/test_misc.py"
+    },
+    {
+      "contract": "article.info",
+      "python": "AsyncBpiClient.article.info",
+      "module": "src/bpi/article/client.py",
+      "status": "implemented",
+      "response": "ArticleInfoData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "article.view",
+      "python": "AsyncBpiClient.article.view",
+      "module": "src/bpi/article/client.py",
+      "status": "implemented",
+      "response": "ArticleViewData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "article.cards",
+      "python": "AsyncBpiClient.article.cards",
+      "module": "src/bpi/article/client.py",
+      "status": "implemented",
+      "response": "CardData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "article.articles_info",
+      "python": "AsyncBpiClient.article.articles",
+      "module": "src/bpi/article/client.py",
+      "status": "implemented",
+      "response": "ArticlesData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "article.like",
+      "python": "AsyncBpiClient.article.like",
+      "module": "src/bpi/article/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/article/action.rs",
+      "source_sha256": "669a093475726f73f6ce85c4c101752202a15e3e6e12f162f218b556cdfe3542"
+    },
+    {
+      "contract": "article.coin",
+      "python": "AsyncBpiClient.article.coin",
+      "module": "src/bpi/article/client.py",
+      "status": "implemented",
+      "response": "CoinResponseData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/article/action.rs",
+      "source_sha256": "669a093475726f73f6ce85c4c101752202a15e3e6e12f162f218b556cdfe3542"
+    },
+    {
+      "contract": "article.favorite",
+      "python": "AsyncBpiClient.article.favorite",
+      "module": "src/bpi/article/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/article/action.rs",
+      "source_sha256": "669a093475726f73f6ce85c4c101752202a15e3e6e12f162f218b556cdfe3542"
+    },
+    {
+      "contract": "article.unfavorite",
+      "python": "AsyncBpiClient.article.unfavorite",
+      "module": "src/bpi/article/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/article/action.rs",
+      "source_sha256": "669a093475726f73f6ce85c4c101752202a15e3e6e12f162f218b556cdfe3542"
+    },
+    {
+      "contract": "note.is_forbid",
+      "python": "AsyncBpiClient.note.is_forbid",
+      "module": "src/bpi/note/client.py",
+      "status": "implemented",
+      "response": "NoteIsForbidData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "note.private_info",
+      "python": "AsyncBpiClient.note.private_info",
+      "module": "src/bpi/note/client.py",
+      "status": "implemented",
+      "response": "PrivateNoteInfoData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "note.public_info",
+      "python": "AsyncBpiClient.note.public_info",
+      "module": "src/bpi/note/client.py",
+      "status": "implemented",
+      "response": "PublicNoteInfoData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "note.archive_list",
+      "python": "AsyncBpiClient.note.archive_list",
+      "module": "src/bpi/note/client.py",
+      "status": "implemented",
+      "response": "NoteListArchiveData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "note.user_private_list",
+      "python": "AsyncBpiClient.note.user_private_list",
+      "module": "src/bpi/note/client.py",
+      "status": "implemented",
+      "response": "PrivateNoteListData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "note.public_archive_list",
+      "python": "AsyncBpiClient.note.public_archive_list",
+      "module": "src/bpi/note/client.py",
+      "status": "implemented",
+      "response": "PublicNoteListArchiveData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "note.user_public_list",
+      "python": "AsyncBpiClient.note.user_public_list",
+      "module": "src/bpi/note/client.py",
+      "status": "implemented",
+      "response": "PublicNoteListUserData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "note.add",
+      "python": "AsyncBpiClient.note.add",
+      "module": "src/bpi/note/client.py",
+      "status": "implemented",
+      "response": "NoteAddResponseData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/note/action.rs",
+      "source_sha256": "7b5ae1b499b3dea778bd14681d97fafa5ecfac6bf1de4a65dcb8775fc641bd1b"
+    },
+    {
+      "contract": "note.delete",
+      "python": "AsyncBpiClient.note.delete",
+      "module": "src/bpi/note/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/note/action.rs",
+      "source_sha256": "7b5ae1b499b3dea778bd14681d97fafa5ecfac6bf1de4a65dcb8775fc641bd1b"
+    },
+    {
+      "contract": "comment.read.list",
+      "python": "AsyncBpiClient.comment.list",
+      "module": "src/bpi/comment/client.py",
+      "status": "implemented",
+      "response": "CommentListData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "comment.read.replies",
+      "python": "AsyncBpiClient.comment.replies",
+      "module": "src/bpi/comment/client.py",
+      "status": "implemented",
+      "response": "CommentListData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "comment.read.hot",
+      "python": "AsyncBpiClient.comment.hot",
+      "module": "src/bpi/comment/client.py",
+      "status": "implemented",
+      "response": "HotCommentData | None",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "comment.read.count",
+      "python": "AsyncBpiClient.comment.count",
+      "module": "src/bpi/comment/client.py",
+      "status": "implemented",
+      "response": "CountData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "comment.action.add",
+      "python": "AsyncBpiClient.comment.add",
+      "module": "src/bpi/comment/client.py",
+      "status": "implemented",
+      "response": "CommentData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/comment/action.rs",
+      "source_sha256": "fc6b3f4fda71b458917b1c7e003316dd122b7897067b5afd1286d487509ae4d8"
+    },
+    {
+      "contract": "comment.action.like",
+      "python": "AsyncBpiClient.comment.like",
+      "module": "src/bpi/comment/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/comment/action.rs",
+      "source_sha256": "fc6b3f4fda71b458917b1c7e003316dd122b7897067b5afd1286d487509ae4d8"
+    },
+    {
+      "contract": "comment.action.dislike",
+      "python": "AsyncBpiClient.comment.dislike",
+      "module": "src/bpi/comment/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/comment/action.rs",
+      "source_sha256": "fc6b3f4fda71b458917b1c7e003316dd122b7897067b5afd1286d487509ae4d8"
+    },
+    {
+      "contract": "comment.action.delete",
+      "python": "AsyncBpiClient.comment.delete",
+      "module": "src/bpi/comment/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/comment/action.rs",
+      "source_sha256": "fc6b3f4fda71b458917b1c7e003316dd122b7897067b5afd1286d487509ae4d8"
+    },
+    {
+      "contract": "comment.action.top",
+      "python": "AsyncBpiClient.comment.top",
+      "module": "src/bpi/comment/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/comment/action.rs",
+      "source_sha256": "fc6b3f4fda71b458917b1c7e003316dd122b7897067b5afd1286d487509ae4d8"
+    },
+    {
+      "contract": "comment.action.report",
+      "python": "AsyncBpiClient.comment.report",
+      "module": "src/bpi/comment/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/comment/action.rs",
+      "source_sha256": "fc6b3f4fda71b458917b1c7e003316dd122b7897067b5afd1286d487509ae4d8"
+    },
+    {
+      "contract": "electric.month_up_list",
+      "python": "AsyncBpiClient.electric.month_up_list",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "ChargeMonthUpData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "electric.video_show",
+      "python": "AsyncBpiClient.electric.video_show",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "VideoElecShowData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "electric.recharge_list",
+      "python": "AsyncBpiClient.electric.recharge_list",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "RechargeData",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "electric.rank_recent",
+      "python": "AsyncBpiClient.electric.rank_recent",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "ElecRankData",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "electric.charge_record",
+      "python": "AsyncBpiClient.electric.charge_record",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "ChargeRecordData",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "electric.upower_item_detail",
+      "python": "AsyncBpiClient.electric.upower_item_detail",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "UpowerItemDetail",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "electric.charge_follow_info",
+      "python": "AsyncBpiClient.electric.charge_follow_info",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "ChargeFollowInfo",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "electric.upower_member_rank",
+      "python": "AsyncBpiClient.electric.upower_member_rank",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "MemberRankData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "electric.remark_list",
+      "python": "AsyncBpiClient.electric.remark_list",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "ElecRemarkList",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "electric.remark_detail",
+      "python": "AsyncBpiClient.electric.remark_detail",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "ElecRemarkDetail",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "electric.bcoin.quick_pay",
+      "python": "AsyncBpiClient.electric.bcoin_quick_pay",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "BcoinQuickPayData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/electric/bcoin.rs",
+      "source_sha256": "65c1dfd891cb8f22681dd09acefafb4f442a3fc3e571509a9e546e10f0d5811c"
+    },
+    {
+      "contract": "electric.message.send",
+      "python": "AsyncBpiClient.electric.send_message",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "JsonValue | None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/electric/charge_msg.rs",
+      "source_sha256": "62502194c95148bb03e5b956fcd46bec38c2c6d9304500fa7fe2ef648e93d4c8"
+    },
+    {
+      "contract": "electric.remark.reply",
+      "python": "AsyncBpiClient.electric.reply_remark",
+      "module": "src/bpi/electric/client.py",
+      "status": "implemented",
+      "response": "int",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/electric/charge_msg.rs",
+      "source_sha256": "62502194c95148bb03e5b956fcd46bec38c2c6d9304500fa7fe2ef648e93d4c8"
+    },
+    {
+      "contract": "manga.season_info",
+      "python": "AsyncBpiClient.manga.season_info",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "SeasonInfoData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "manga.clock_in_info",
+      "python": "AsyncBpiClient.manga.clock_in_info",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "ClockInInfoData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "manga.user_point",
+      "python": "AsyncBpiClient.manga.user_point",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "UserPointData",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "manga.point_products",
+      "python": "AsyncBpiClient.manga.point_products",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "list[Product]",
+      "risk": "public-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "manga.coupons",
+      "python": "AsyncBpiClient.manga.coupons",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "CouponsData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "manga.clock_in",
+      "python": "AsyncBpiClient.manga.manga_clock_in",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/manga/clockin.rs",
+      "source_sha256": "0f3d7f3d3f2b78a6eab5a0305b653eb91b15e53c42106d268a992c7f0cc5a849"
+    },
+    {
+      "contract": "manga.clock_in_makeup",
+      "python": "AsyncBpiClient.manga.manga_clock_in_makeup",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/manga/clockin.rs",
+      "source_sha256": "0f3d7f3d3f2b78a6eab5a0305b653eb91b15e53c42106d268a992c7f0cc5a849"
+    },
+    {
+      "contract": "manga.share_comic",
+      "python": "AsyncBpiClient.manga.manga_share_comic",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "ShareComicData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/manga/activity.rs",
+      "source_sha256": "16a3126d17768bea88f2342afe5eba276cbacb4fc2162dd44ebf60e961f16213"
+    },
+    {
+      "contract": "manga.buy_episode",
+      "python": "AsyncBpiClient.manga.manga_buy_episode",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/manga/comic.rs",
+      "source_sha256": "ab531a7d1a1f2a32c3fb7c2118c9686ca115e8891029bdc3521349732b485eb7"
+    },
+    {
+      "contract": "manga.buy_episode_with_coupon",
+      "python": "AsyncBpiClient.manga.manga_buy_episode_with_coupon",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/manga/comic.rs",
+      "source_sha256": "ab531a7d1a1f2a32c3fb7c2118c9686ca115e8891029bdc3521349732b485eb7"
+    },
+    {
+      "contract": "manga.buy_episode_with_free",
+      "python": "AsyncBpiClient.manga.manga_buy_episode_with_free",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/manga/comic.rs",
+      "source_sha256": "ab531a7d1a1f2a32c3fb7c2118c9686ca115e8891029bdc3521349732b485eb7"
+    },
+    {
+      "contract": "manga.buy_episode_with_general_coupon",
+      "python": "AsyncBpiClient.manga.manga_buy_episode_with_general_coupon",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/manga/comic.rs",
+      "source_sha256": "ab531a7d1a1f2a32c3fb7c2118c9686ca115e8891029bdc3521349732b485eb7"
+    },
+    {
+      "contract": "manga.point_exchange",
+      "python": "AsyncBpiClient.manga.manga_point_exchange",
+      "module": "src/bpi/manga/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/manga/point_shop.rs",
+      "source_sha256": "73e32c7563efc6c8abe273e430c49978931f238b1e047fb0403ee66454b20993"
+    },
+    {
+      "contract": "login.coin",
+      "python": "AsyncBpiClient.login.coin",
+      "module": "src/bpi/login/client.py",
+      "status": "implemented",
+      "response": "LoginCoinBalance",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "login.today_coin_exp",
+      "python": "AsyncBpiClient.login.today_coin_exp",
+      "module": "src/bpi/login/client.py",
+      "status": "implemented",
+      "response": "int",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "login.notice",
+      "python": "AsyncBpiClient.login.notice",
+      "module": "src/bpi/login/client.py",
+      "status": "implemented",
+      "response": "LoginNoticeData",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "login.log",
+      "python": "AsyncBpiClient.login.log",
+      "module": "src/bpi/login/client.py",
+      "status": "implemented",
+      "response": "LoginLogData",
+      "risk": "private-read",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "login.captcha_generate",
+      "python": "AsyncBpiClient.login.generate_captcha",
+      "module": "src/bpi/login/client.py",
+      "status": "implemented",
+      "response": "GenerateCaptcha",
+      "risk": "login-session",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "login.qr_generate",
+      "python": "AsyncBpiClient.login.qr_generate",
+      "module": "src/bpi/login/client.py",
+      "status": "implemented",
+      "response": "GenerateQrCodeData",
+      "risk": "login-session",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "login.qr_poll",
+      "python": "AsyncBpiClient.login.qr_poll",
+      "module": "src/bpi/login/client.py",
+      "status": "implemented",
+      "response": "CheckQrCodeStatusData",
+      "risk": "login-session",
+      "validation": "offline_contracts"
+    },
+    {
+      "contract": "login.logout",
+      "python": "AsyncBpiClient.login.logout",
+      "module": "src/bpi/login/client.py",
+      "status": "implemented",
+      "response": "LogoutData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/login/exit.rs",
+      "source_sha256": "53bc36e63b139ea6adb5dc23de68606216df7ada4443a12ea41c10d1575120e5"
+    },
+    {
+      "contract": "login.sms.send",
+      "python": "AsyncBpiClient.login.send_sms_code",
+      "module": "src/bpi/login/client.py",
+      "status": "implemented",
+      "response": "SmsSendData",
+      "risk": "login-session",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/login/login_action/sms.rs",
+      "source_sha256": "b4b51af1fd0c87418d3349174a83f74e7821011f12d70b0406a5cba94a47314a"
+    },
+    {
+      "contract": "login.sms.login",
+      "python": "AsyncBpiClient.login.login_with_sms",
+      "module": "src/bpi/login/client.py",
+      "status": "implemented",
+      "response": "None",
+      "risk": "login-session",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/login/login_action/sms.rs",
+      "source_sha256": "b4b51af1fd0c87418d3349174a83f74e7821011f12d70b0406a5cba94a47314a"
+    },
+    {
+      "contract": "login.member_center.user_sign.update",
+      "python": "AsyncBpiClient.login.update_user_sign",
+      "module": "src/bpi/login/client.py",
+      "status": "implemented",
+      "response": "JsonValue | None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/login/member_center/sign.rs",
+      "source_sha256": "1541bb37251a5af762f2a00dcfaef56728a7ebaf977e4930e098b133efbd78e5"
+    },
+    {
+      "contract": "danmaku.history.dates",
+      "python": "AsyncBpiClient.danmaku.history_dates",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "list[str] | None",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts",
+      "source": "src/danmaku/client.rs",
+      "source_sha256": "4f5d9843b8040d53196df1c1c13a01ba2564d4fdebc087ad687f4a84c6bb571c"
+    },
+    {
+      "contract": "danmaku.snapshot",
+      "python": "AsyncBpiClient.danmaku.snapshot",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "list[str]",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/danmaku/client.rs",
+      "source_sha256": "4f5d9843b8040d53196df1c1c13a01ba2564d4fdebc087ad687f4a84c6bb571c"
+    },
+    {
+      "contract": "danmaku.thumbup.stats",
+      "python": "AsyncBpiClient.danmaku.thumbup_stats",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "dict[str, ThumbupStatsItem]",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/danmaku/client.rs",
+      "source_sha256": "4f5d9843b8040d53196df1c1c13a01ba2564d4fdebc087ad687f4a84c6bb571c"
+    },
+    {
+      "contract": "danmaku.adv.state",
+      "python": "AsyncBpiClient.danmaku.adv_state",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "DanmakuAdvState",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts",
+      "source": "src/danmaku/client.rs",
+      "source_sha256": "4f5d9843b8040d53196df1c1c13a01ba2564d4fdebc087ad687f4a84c6bb571c"
+    },
+    {
+      "contract": "danmaku.web.seg",
+      "python": "AsyncBpiClient.danmaku.web_seg_proto",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "bytes",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/danmaku/client.rs",
+      "source_sha256": "4f5d9843b8040d53196df1c1c13a01ba2564d4fdebc087ad687f4a84c6bb571c"
+    },
+    {
+      "contract": "danmaku.web.seg_wbi",
+      "python": "AsyncBpiClient.danmaku.web_seg_wbi_proto",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "bytes",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/danmaku/client.rs",
+      "source_sha256": "4f5d9843b8040d53196df1c1c13a01ba2564d4fdebc087ad687f4a84c6bb571c"
+    },
+    {
+      "contract": "danmaku.web.view",
+      "python": "AsyncBpiClient.danmaku.web_view_proto",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "bytes",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/danmaku/client.rs",
+      "source_sha256": "4f5d9843b8040d53196df1c1c13a01ba2564d4fdebc087ad687f4a84c6bb571c"
+    },
+    {
+      "contract": "danmaku.mobile.seg",
+      "python": "AsyncBpiClient.danmaku.mobile_seg_proto",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "bytes",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/danmaku/client.rs",
+      "source_sha256": "4f5d9843b8040d53196df1c1c13a01ba2564d4fdebc087ad687f4a84c6bb571c"
+    },
+    {
+      "contract": "danmaku.web.history_seg",
+      "python": "AsyncBpiClient.danmaku.web_history_seg_proto",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "bytes",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts",
+      "source": "src/danmaku/client.rs",
+      "source_sha256": "4f5d9843b8040d53196df1c1c13a01ba2564d4fdebc087ad687f4a84c6bb571c"
+    },
+    {
+      "contract": "danmaku.history.xml",
+      "python": "AsyncBpiClient.danmaku.history_xml_bytes",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "bytes",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts",
+      "source": "src/danmaku/client.rs",
+      "source_sha256": "4f5d9843b8040d53196df1c1c13a01ba2564d4fdebc087ad687f4a84c6bb571c"
+    },
+    {
+      "contract": "danmaku.xml.list_so",
+      "python": "AsyncBpiClient.danmaku.xml_list_so",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "DanmakuXml",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/danmaku/client.rs",
+      "source_sha256": "4f5d9843b8040d53196df1c1c13a01ba2564d4fdebc087ad687f4a84c6bb571c"
+    },
+    {
+      "contract": "danmaku.xml.comment_xml",
+      "python": "AsyncBpiClient.danmaku.xml_list",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "DanmakuXml",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/danmaku/client.rs",
+      "source_sha256": "4f5d9843b8040d53196df1c1c13a01ba2564d4fdebc087ad687f4a84c6bb571c"
+    },
+    {
+      "contract": "danmaku.send",
+      "python": "AsyncBpiClient.danmaku.send",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "DanmakuPostData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/danmaku/action.rs",
+      "source_sha256": "eabd2ba389dd9c8a2abe7239aa19f2789113ce0d3a03d12a2a7b5782d5270c43"
+    },
+    {
+      "contract": "danmaku.recall",
+      "python": "AsyncBpiClient.danmaku.recall",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "JsonValue | None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/danmaku/action.rs",
+      "source_sha256": "eabd2ba389dd9c8a2abe7239aa19f2789113ce0d3a03d12a2a7b5782d5270c43"
+    },
+    {
+      "contract": "danmaku.adv.buy",
+      "python": "AsyncBpiClient.danmaku.buy_adv",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "JsonValue | None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/danmaku/action.rs",
+      "source_sha256": "eabd2ba389dd9c8a2abe7239aa19f2789113ce0d3a03d12a2a7b5782d5270c43"
+    },
+    {
+      "contract": "danmaku.thumbup",
+      "python": "AsyncBpiClient.danmaku.thumbup",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "JsonValue | None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/danmaku/action.rs",
+      "source_sha256": "eabd2ba389dd9c8a2abe7239aa19f2789113ce0d3a03d12a2a7b5782d5270c43"
+    },
+    {
+      "contract": "danmaku.report",
+      "python": "AsyncBpiClient.danmaku.report",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "JsonValue | None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/danmaku/action.rs",
+      "source_sha256": "eabd2ba389dd9c8a2abe7239aa19f2789113ce0d3a03d12a2a7b5782d5270c43"
+    },
+    {
+      "contract": "danmaku.edit.state",
+      "python": "AsyncBpiClient.danmaku.edit_state",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "JsonValue | None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/danmaku/action.rs",
+      "source_sha256": "eabd2ba389dd9c8a2abe7239aa19f2789113ce0d3a03d12a2a7b5782d5270c43"
+    },
+    {
+      "contract": "danmaku.edit.pool",
+      "python": "AsyncBpiClient.danmaku.edit_pool",
+      "module": "src/bpi/danmaku/client.py",
+      "status": "implemented",
+      "response": "JsonValue | None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/danmaku/action.rs",
+      "source_sha256": "eabd2ba389dd9c8a2abe7239aa19f2789113ce0d3a03d12a2a7b5782d5270c43"
+    },
+    {
+      "contract": "dynamic.feed_all",
+      "python": "AsyncBpiClient.dynamic.all",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "DynamicAllData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.feed_all_update",
+      "python": "AsyncBpiClient.dynamic.check_new",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "DynamicUpdateData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.feed_nav",
+      "python": "AsyncBpiClient.dynamic.nav_feed",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "DynamicNavData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.feed_banner",
+      "python": "AsyncBpiClient.dynamic.feed_banner",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "DynamicBannerData",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.detail",
+      "python": "AsyncBpiClient.dynamic.detail",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "DynamicDetailData",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.detail_reaction",
+      "python": "AsyncBpiClient.dynamic.reactions",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "DynamicReactionData",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.lottery_notice",
+      "python": "AsyncBpiClient.dynamic.lottery_notice",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "DynamicLotteryData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.detail_forward",
+      "python": "AsyncBpiClient.dynamic.forwards",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "DynamicForwardData",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.detail_pic",
+      "python": "AsyncBpiClient.dynamic.pics",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "list[DynamicPic]",
+      "risk": "public-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.detail_forward_item",
+      "python": "AsyncBpiClient.dynamic.forward_item",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "DynamicForwardInfoData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.live_users",
+      "python": "AsyncBpiClient.dynamic.live_users",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "LiveUsersData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.up_users",
+      "python": "AsyncBpiClient.dynamic.up_users",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "DynUpUsersData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.recent_up",
+      "python": "AsyncBpiClient.dynamic.recent_up",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "RecentUpData",
+      "risk": "authenticated-read",
+      "validation": "offline_contracts",
+      "source": "src/dynamic/client.rs",
+      "source_sha256": "feea27aee5d5069a4d88be57b8118c4ceeff8c211c1382fc825471f124edff7e"
+    },
+    {
+      "contract": "dynamic.like",
+      "python": "AsyncBpiClient.dynamic.like",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "JsonValue | None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/dynamic/action.rs",
+      "source_sha256": "9b3f484a433ea7e8a628a8ba8c16662da69dcabf175fc5780ae1422179a1120c"
+    },
+    {
+      "contract": "dynamic.draft.delete",
+      "python": "AsyncBpiClient.dynamic.delete_draft",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "JsonValue | None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/dynamic/action.rs",
+      "source_sha256": "9b3f484a433ea7e8a628a8ba8c16662da69dcabf175fc5780ae1422179a1120c"
+    },
+    {
+      "contract": "dynamic.top.set",
+      "python": "AsyncBpiClient.dynamic.set_top",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "JsonValue | None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/dynamic/action.rs",
+      "source_sha256": "9b3f484a433ea7e8a628a8ba8c16662da69dcabf175fc5780ae1422179a1120c"
+    },
+    {
+      "contract": "dynamic.top.remove",
+      "python": "AsyncBpiClient.dynamic.remove_top",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "JsonValue | None",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/dynamic/action.rs",
+      "source_sha256": "9b3f484a433ea7e8a628a8ba8c16662da69dcabf175fc5780ae1422179a1120c"
+    },
+    {
+      "contract": "dynamic.pic.upload",
+      "python": "AsyncBpiClient.dynamic.upload_pic",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "UploadPicData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/dynamic/publish.rs",
+      "source_sha256": "05b5aae49763b38006d3f1fa21f49f179ec8de74545513262de409ccfb7e4b4d"
+    },
+    {
+      "contract": "dynamic.text.create",
+      "python": "AsyncBpiClient.dynamic.create_text",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "CreateDynamicData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/dynamic/publish.rs",
+      "source_sha256": "05b5aae49763b38006d3f1fa21f49f179ec8de74545513262de409ccfb7e4b4d"
+    },
+    {
+      "contract": "dynamic.complex.create",
+      "python": "AsyncBpiClient.dynamic.create_complex",
+      "module": "src/bpi/dynamic/client.py",
+      "status": "implemented",
+      "response": "CreateComplexDynamicData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/dynamic/publish.rs",
+      "source_sha256": "05b5aae49763b38006d3f1fa21f49f179ec8de74545513262de409ccfb7e4b4d"
+    },
+    {
+      "contract": "creativecenter.season.list",
+      "python": "AsyncBpiClient.creativecenter.season_list",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "SeasonListData",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.season.info",
+      "python": "AsyncBpiClient.creativecenter.season_info",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "SeasonInfoData",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.season.aid",
+      "python": "AsyncBpiClient.creativecenter.season_by_aid",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "SeasonByAidData",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.season.section",
+      "python": "AsyncBpiClient.creativecenter.season_section_episodes",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "SeasonSectionEpisodesData",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.videos.archives_list",
+      "python": "AsyncBpiClient.creativecenter.archives_list",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "SpArchivesData",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.videos.archive_videos",
+      "python": "AsyncBpiClient.creativecenter.archive_videos",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "ArchiveVideosData",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.statistics.up_stat",
+      "python": "AsyncBpiClient.creativecenter.up_stat",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "UpStatData",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.statistics.archive_compare",
+      "python": "AsyncBpiClient.creativecenter.archive_compare",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "ArchiveCompareData",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.statistics.article_stat",
+      "python": "AsyncBpiClient.creativecenter.article_stat",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "UpArticleStatData",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.statistics.video_trend",
+      "python": "AsyncBpiClient.creativecenter.video_trend",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "list[VideoTrendItem]",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.statistics.article_trend",
+      "python": "AsyncBpiClient.creativecenter.article_trend",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "list[ArticleTrendItem] | None",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.statistics.play_source",
+      "python": "AsyncBpiClient.creativecenter.play_source",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "PlaySourceData | None",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.statistics.viewer_data",
+      "python": "AsyncBpiClient.creativecenter.viewer_data",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "ViewerData",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.railgun.electromagnetic_info",
+      "python": "AsyncBpiClient.creativecenter.electromagnetic_info",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "ElectromagneticInfo",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source": "src/creativecenter/client.rs",
+      "source_sha256": "318d2d97b037bcf68ed257244d5e841146e684430738ea0bef53af80cb0518ec"
+    },
+    {
+      "contract": "creativecenter.dynamic.delete",
+      "python": "AsyncBpiClient.creativecenter.dynamic_delete",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/creativecenter/opus.rs",
+      "source_sha256": "2651f86b2ab32c3698616aad979c73845362c03597c881295e510fc094878daf"
+    },
+    {
+      "contract": "creativecenter.article.delete",
+      "python": "AsyncBpiClient.creativecenter.article_delete",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/creativecenter/opus.rs",
+      "source_sha256": "2651f86b2ab32c3698616aad979c73845362c03597c881295e510fc094878daf"
+    },
+    {
+      "contract": "creativecenter.season.create",
+      "python": "AsyncBpiClient.creativecenter.season_create",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "int",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/creativecenter/season/action.rs",
+      "source_sha256": "a566733418f38dfaf83a31d036403459851582357c52375d014b9c0963e8b2b8"
+    },
+    {
+      "contract": "creativecenter.season.delete",
+      "python": "AsyncBpiClient.creativecenter.season_delete",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/creativecenter/season/action.rs",
+      "source_sha256": "a566733418f38dfaf83a31d036403459851582357c52375d014b9c0963e8b2b8"
+    },
+    {
+      "contract": "creativecenter.season.episodes.add",
+      "python": "AsyncBpiClient.creativecenter.season_episodes_add",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/creativecenter/season/action.rs",
+      "source_sha256": "a566733418f38dfaf83a31d036403459851582357c52375d014b9c0963e8b2b8"
+    },
+    {
+      "contract": "creativecenter.season.edit",
+      "python": "AsyncBpiClient.creativecenter.season_edit",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/creativecenter/season/edit.rs",
+      "source_sha256": "67fbc4bf200bb450c2a9ed24457838f2717d18dde68f09e4a763aefdf7c18bae"
+    },
+    {
+      "contract": "creativecenter.season.section.edit",
+      "python": "AsyncBpiClient.creativecenter.season_section_edit",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/creativecenter/season/edit.rs",
+      "source_sha256": "67fbc4bf200bb450c2a9ed24457838f2717d18dde68f09e4a763aefdf7c18bae"
+    },
+    {
+      "contract": "creativecenter.season.section.episode.edit",
+      "python": "AsyncBpiClient.creativecenter.season_section_episode_edit",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/creativecenter/season/edit.rs",
+      "source_sha256": "67fbc4bf200bb450c2a9ed24457838f2717d18dde68f09e4a763aefdf7c18bae"
+    },
+    {
+      "contract": "creativecenter.season.section.switch",
+      "python": "AsyncBpiClient.creativecenter.season_enable_section",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/creativecenter/season/edit.rs",
+      "source_sha256": "67fbc4bf200bb450c2a9ed24457838f2717d18dde68f09e4a763aefdf7c18bae"
+    },
+    {
+      "contract": "creativecenter.season.section.episodes.add",
+      "python": "AsyncBpiClient.creativecenter.season_section_add_episodes",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "JsonValue",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/creativecenter/season/edit.rs",
+      "source_sha256": "67fbc4bf200bb450c2a9ed24457838f2717d18dde68f09e4a763aefdf7c18bae"
+    },
+    {
+      "contract": "creativecenter.cover.upload",
+      "python": "AsyncBpiClient.creativecenter.upload_cover",
+      "module": "src/bpi/creativecenter/client.py",
+      "status": "implemented",
+      "response": "UploadCoverData",
+      "risk": "authenticated-write",
+      "validation": "source_derived_synthetic_offline",
+      "source": "src/creativecenter/upload.rs",
+      "source_sha256": "2eccbe58cadfa91d3175ae9e2e10121066a6f3042e70dd40ba947563e6ca81de"
+    }
+  ],
+  "generated_fixture_provenance": "tests/generated_reads/fixtures/provenance.json",
+  "generation_recipes": [
+    "migration/batch-3.json",
+    "migration/batch-4.json",
+    "migration/batch-video.json",
+    "migration/batch-audio.json",
+    "migration/batch-bangumi.json",
+    "migration/batch-cheese.json",
+    "migration/batch-user.json"
+  ],
+  "modules": {
+    "video": {
+      "source_methods": 27,
+      "implemented_methods": 27,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "audio": {
+      "source_methods": 20,
+      "implemented_methods": 20,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "bangumi": {
+      "source_methods": 9,
+      "implemented_methods": 9,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "cheese": {
+      "source_methods": 5,
+      "implemented_methods": 5,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "user": {
+      "source_methods": 25,
+      "implemented_methods": 25,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "search": {
+      "source_methods": 11,
+      "implemented_methods": 11,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "fav": {
+      "source_methods": 13,
+      "implemented_methods": 13,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "historytoview": {
+      "source_methods": 9,
+      "implemented_methods": 9,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "live": {
+      "source_methods": 34,
+      "implemented_methods": 34,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "video_ranking": {
+      "source_methods": 9,
+      "implemented_methods": 9,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "opus": {
+      "source_methods": 1,
+      "implemented_methods": 1,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "wallet": {
+      "source_methods": 1,
+      "implemented_methods": 1,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "clientinfo": {
+      "source_methods": 1,
+      "implemented_methods": 1,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "activity": {
+      "source_methods": 3,
+      "implemented_methods": 3,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "web_widget": {
+      "source_methods": 3,
+      "implemented_methods": 3,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "vip": {
+      "source_methods": 3,
+      "implemented_methods": 3,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "message": {
+      "source_methods": 4,
+      "implemented_methods": 4,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "misc": {
+      "source_methods": 5,
+      "implemented_methods": 5,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "article": {
+      "source_methods": 8,
+      "implemented_methods": 8,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "note": {
+      "source_methods": 9,
+      "implemented_methods": 9,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "comment": {
+      "source_methods": 10,
+      "implemented_methods": 10,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "electric": {
+      "source_methods": 13,
+      "implemented_methods": 13,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "manga": {
+      "source_methods": 13,
+      "implemented_methods": 13,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "login": {
+      "source_methods": 16,
+      "implemented_methods": 16,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "danmaku": {
+      "source_methods": 19,
+      "implemented_methods": 19,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "dynamic": {
+      "source_methods": 20,
+      "implemented_methods": 20,
+      "status": "implemented",
+      "validation": "offline_only"
+    },
+    "creativecenter": {
+      "source_methods": 25,
+      "implemented_methods": 25,
+      "status": "implemented",
+      "validation": "offline_only"
+    }
+  }
+}

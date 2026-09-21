@@ -1,0 +1,88 @@
+{
+  "schema_version": 2,
+  "name": "danmaku.xml.list_so",
+  "module": "danmaku",
+  "batch": "xml-read",
+  "endpoint": "list-so",
+  "risk": "public-read",
+  "status": "promoted",
+  "profiles": [
+    "anonymous",
+    "normal",
+    "vip"
+  ],
+  "request": {
+    "method": "GET",
+    "url": "https://api.bilibili.com/x/v1/dm/list.so",
+    "query": {
+      "oid": "16546"
+    },
+    "required_headers": [
+      "user-agent"
+    ],
+    "headers": {},
+    "auth": {
+      "requires": []
+    },
+    "response_decoding": "disabled"
+  },
+  "sanitize": {
+    "preset": [],
+    "replace": {},
+    "drop": [],
+    "keep": []
+  },
+  "provenance": {
+    "source": "local_probe_output",
+    "privacy": "compressed XML fixture contains public danmaku content; response_decoding disabled is required to preserve raw deflate bytes",
+    "tool": "bpi-probe",
+    "tool_version": "0.2.0"
+  },
+  "cases": [
+    {
+      "name": "anonymous",
+      "profile": "anonymous",
+      "auth": {
+        "requires": []
+      },
+      "response": {
+        "http_status": 200,
+        "fixture": "responses/success.json",
+        "fixture_kind": "probe_binary_body",
+        "rust_model": "DanmakuXml"
+      }
+    },
+    {
+      "name": "normal",
+      "profile": "normal",
+      "auth": {
+        "profile": "normal",
+        "requires": [
+          "cookie"
+        ]
+      },
+      "response": {
+        "http_status": 200,
+        "fixture": "responses/success.json",
+        "fixture_kind": "probe_binary_body",
+        "rust_model": "DanmakuXml"
+      }
+    },
+    {
+      "name": "vip",
+      "profile": "vip",
+      "auth": {
+        "profile": "vip",
+        "requires": [
+          "cookie"
+        ]
+      },
+      "response": {
+        "http_status": 200,
+        "fixture": "responses/success.json",
+        "fixture_kind": "probe_binary_body",
+        "rust_model": "DanmakuXml"
+      }
+    }
+  ]
+}

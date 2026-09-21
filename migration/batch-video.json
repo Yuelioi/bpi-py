@@ -1,0 +1,7 @@
+{
+  "source_commit": "4b8d49126d34c32b0067d93d87976c3a7f97b4c5",
+  "endpoints": [
+    {"contract": "video.player_info_v2", "domain": "video", "method": "player_info_v2", "models_file": "src/video/player.rs", "video_id": true, "params": [{"name": "cid", "min": 1}, {"name": "season_id", "min": 1, "optional": true}, {"name": "ep_id", "min": 1, "optional": true}]},
+    {"contract": "video.homepage_recommendations", "domain": "video", "method": "homepage_recommendations", "models_file": "src/video/recommend.rs", "fixed_query": {"fresh_type": "4"}, "query_copies": {"fresh_idx_1h": "fresh_idx", "brush": "fresh_idx"}, "params": [{"name": "page_size", "wire": "ps", "min": 1, "max": 30, "default": 12}, {"name": "fresh_idx", "min": 1, "default": 1}, {"name": "fetch_row", "min": 1, "default": 1}]}
+  ]
+}

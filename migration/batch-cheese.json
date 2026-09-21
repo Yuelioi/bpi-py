@@ -1,0 +1,30 @@
+{
+  "source_commit": "4b8d49126d34c32b0067d93d87976c3a7f97b4c5",
+  "endpoints": [
+    {
+      "contract": "cheese.info.season_detail_by_season_id",
+      "domain": "cheese",
+      "method": "info_by_season_id",
+      "models_file": "src/cheese/info.rs",
+      "params": [{"name": "season_id", "min": 1}]
+    },
+    {
+      "contract": "cheese.info.season_detail_by_ep_id",
+      "domain": "cheese",
+      "method": "info_by_ep_id",
+      "models_file": "src/cheese/info.rs",
+      "params": [{"name": "episode_id", "wire": "ep_id", "min": 1}]
+    },
+    {
+      "contract": "cheese.info.ep_list",
+      "domain": "cheese",
+      "method": "ep_list",
+      "models_file": "src/cheese/info.rs",
+      "params": [
+        {"name": "season_id", "min": 1},
+        {"name": "page_size", "wire": "ps", "min": 1, "optional": true},
+        {"name": "page", "wire": "pn", "min": 1, "optional": true}
+      ]
+    }
+  ]
+}

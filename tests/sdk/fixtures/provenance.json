@@ -1,0 +1,16 @@
+{
+  "source_commit": "4b8d49126d34c32b0067d93d87976c3a7f97b4c5",
+  "source_repository": "https://github.com/Yuelioi/bpi-rs",
+  "sha256": {
+    "login/nav/contract.json": "6cd4d55e0125cfb04485bc6889623de78666980d1b47c7cd4e20f6e400c3cc24",
+    "login/nav/responses/anonymous.error.json": "b336957f8fb5be737a047a5cd3fe189ffbc7d8a3a70ebe7d7a1d644b9fe82854",
+    "login/nav/responses/normal.success.json": "2ec8e2e0537f338b33deabe127ef213410c7ede37cb839c5611ae7bd79b2d841",
+    "login/nav/responses/vip.success.json": "6182f8168c88ef7f5ef1518ff41ff61d40b51cc9c64188e5abdaac736b918457",
+    "video/info-read/pagelist/contract.json": "0e7182bf567be025e37287ab808f9f589178165b8fb577b09edbc33db62371fa",
+    "video/info-read/pagelist/responses/success.json": "65c0abde3061ffdd73aaca412b86356d5d285f82e61bb239762d9489a976c7cb",
+    "video/info-read/view/contract.json": "e5971edf5e488dc43eb2a0824c27e34bf80d5006dbdf79b895c2d475bfcc880a",
+    "video/info-read/view/responses/success.json": "5c41ec15f8efeabcbdf4181f644ccbc6675c3ed967f9ae3b520398117d2d4492",
+    "video/playurl/play-url/contract.json": "accc4e501f8f6e5ec33f693f4174dbbac29bad6f7297ce79ae4c34a8d88dfe42",
+    "video/playurl/play-url/responses/success.json": "9bceb5fb2b4bc941ce4e71e33afa97e445d8fb2c515849f2b920ddc0f06c9aaa"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schema_version": 2,
+  "name": "wallet.info",
+  "module": "wallet",
+  "batch": "read",
+  "endpoint": "info",
+  "risk": "private-read",
+  "status": "promoted",
+  "profiles": [
+    "normal",
+    "vip"
+  ],
+  "request": {
+    "method": "POST",
+    "url": "https://pay.bilibili.com/paywallet/wallet/getUserWallet",
+    "query": {},
+    "required_headers": [
+      "user-agent",
+      "referer",
+      "origin"
+    ],
+    "headers": {},
+    "auth": {
+      "requires": [
+        "cookie",
+        "csrf"
+      ]
+    },
+    "body": {
+      "csrf": "${csrf}",
+      "platformType": 3,
+      "timestamp": 1700000000000,
+      "traceId": 1700000000000,
+      "version": "1.0"
+    }
+  },
+  "sanitize": {
+    "preset": [
+      "account"
+    ],
+    "replace": {},
+    "drop": [],
+    "keep": []
+  },
+  "provenance": {
+    "source": "local_probe_output",
+    "privacy": "private wallet balance, account mid, and profile csrf sanitized before commit; anonymous empty-csrf probe is recorded only in local notes because it uses a different request body",
+    "tool": "bpi-probe",
+    "tool_version": "0.2.0"
+  },
+  "cases": [
+    {
+      "name": "normal",
+      "profile": "normal",
+      "auth": {
+        "profile": "normal",
+        "requires": [
+          "cookie",
+          "csrf"
+        ]
+      },
+      "response": {
+        "api_code": 0,
+        "fixture": "responses/authenticated.success.json",
+        "fixture_kind": "sanitized_probe_body",
+        "rust_model": "UserWallet"
+      }
+    },
+    {
+      "name": "vip",
+      "profile": "vip",
+      "auth": {
+        "profile": "vip",
+        "requires": [
+          "cookie",
+          "csrf"
+        ]
+      },
+      "response": {
+        "api_code": 0,
+        "fixture": "responses/authenticated.success.json",
+        "fixture_kind": "sanitized_probe_body",
+        "rust_model": "UserWallet"
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "source_commit": "4b8d49126d34c32b0067d93d87976c3a7f97b4c5",
+  "model_defaults": {
+    "BangumiSectionResult.main_section": {
+      "episodes": [],
+      "id": 0,
+      "type": 0,
+      "title": ""
+    }
+  },
+  "external_types": {
+    "bangumi:VipLabel": "bpi.bangumi.models:VipLabel"
+  },
+  "endpoints": [
+    {
+      "contract": "bangumi.info.season_detail_by_season_id",
+      "domain": "bangumi",
+      "method": "detail_by_season_id",
+      "models_file": "src/bangumi/info.rs",
+      "params": [{"name": "season_id", "min": 1}]
+    },
+    {
+      "contract": "bangumi.info.season_detail_by_ep_id",
+      "domain": "bangumi",
+      "method": "detail_by_ep_id",
+      "models_file": "src/bangumi/info.rs",
+      "params": [{"name": "episode_id", "wire": "ep_id", "min": 1}]
+    },
+    {
+      "contract": "bangumi.info.season_section",
+      "domain": "bangumi",
+      "method": "sections",
+      "models_file": "src/bangumi/info.rs",
+      "params": [{"name": "season_id", "min": 1}]
+    }
+  ]
+}
