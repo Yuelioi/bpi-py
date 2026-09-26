@@ -18,6 +18,7 @@ from bpi.cheese.models import CourseVideoStreamData
 
 ROOT = Path(__file__).resolve().parents[2]
 FIXTURES = ROOT / "tests/generated_reads/fixtures"
+LIVE_SHAPE_FIXTURES = ROOT / "tests/cheese/fixtures"
 
 
 @pytest.fixture(autouse=True)
@@ -191,6 +192,43 @@ def test_generated_defaults_and_strict_types_match_rust():
         CoursePayment.model_validate(
             {"desc": "", "discount_desc": "", "pay_shade": "", "price": "1", "price_format": "1"}
         )
+
+
+def test_course_without_coupon_or_discount_decodes():
+    payload = json.loads((LIVE_SHAPE_FIXTURES / "no-coupon.sanitized.json").read_bytes())["data"]
+    value = CourseInfo.model_validate(payload)
+    assert value.season_id == 877726892
+    assert len(value.episodes) == 7
+    assert value.coupon is None
+    assert value.payment.discount_desc == ""
+
+
+def test_drm_course_decodes_without_accept_fields_and_preserves_metadata():
+    payload = json.loads(
+        (LIVE_SHAPE_FIXTURES / "drm.anonymous.sanitized.json").read_bytes()
+    )["data"]
+    value = CourseVideoStreamData.model_validate(payload)
+    assert value.accept_quality == []
+    assert value.accept_format == ""
+    assert value.accept_description == []
+    assert value.is_drm is True
+    assert value.drm_type == "bili_drm"
+    assert value.drm_tech_type == 3
+    assert value.hls is not None
+    assert value.hls.video[0].id == 120
+    assert value.hls.audio[0].id == 100010
+
+
+def test_preview_course_preserves_direct_stream_and_preview_flag():
+    payload = json.loads(
+        (LIVE_SHAPE_FIXTURES / "preview.anonymous.sanitized.json").read_bytes()
+    )["data"]
+    value = CourseVideoStreamData.model_validate(payload)
+    assert value.is_preview == 1
+    assert value.has_paid is False
+    assert value.dash is None
+    assert value.durl is not None
+    assert value.durl[0].url == "https://example.invalid/preview.mp4"
 
 
 def test_cheese_fixture_hashes_are_recorded():

@@ -1,5 +1,9 @@
 {
   "source_commit": "4b8d49126d34c32b0067d93d87976c3a7f97b4c5",
+  "field_overrides": {
+    "CourseInfo.coupon": {"nullable": true},
+    "CoursePayment.discount_desc": {"default": ""}
+  },
   "endpoints": [
     {
       "contract": "cheese.info.season_detail_by_season_id",

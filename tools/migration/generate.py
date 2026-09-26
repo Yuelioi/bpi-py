@@ -41,6 +41,7 @@ class ModelEmitter:
         names: Record | None = None,
         external: Record | None = None,
         external_types: Record | None = None,
+        field_overrides: Record | None = None,
     ) -> None:
         self.domain = domain
         self.types = [t for t in inventory["types"] if t["domain"] == domain]
@@ -51,6 +52,7 @@ class ModelEmitter:
         self.names = names or {}
         self.external = external or {}
         self.external_types = external_types or {}
+        self.field_overrides = field_overrides or {}
         self.external_imports: set[str] = set()
         self.serde_helpers: set[str] = set()
         self.needs_builtins = False
@@ -131,6 +133,11 @@ class ModelEmitter:
         name = raw_name + "_" if keyword.iskeyword(raw_name) else raw_name
         rust_type = field["rust_type"]
         annotation = self.convert(rust_type, source)
+        reviewed_override = self.field_overrides.get(f"{model}.{raw_name}", {})
+        if not isinstance(reviewed_override, dict):
+            raise ValueError(f"Invalid field override for {model}.{raw_name}")
+        if reviewed_override.get("nullable") and not annotation.endswith(" | None"):
+            annotation += " | None"
         if raw_name == "list" and annotation.startswith("list["):
             self.needs_builtins = True
             annotation = "builtins.list[" + annotation[len("list[") :]
@@ -190,6 +197,13 @@ class ModelEmitter:
                 )
             else:
                 raise ValueError(f"Missing reviewed default for {model}.{raw_name}")
+        if "default" in reviewed_override:
+            value = reviewed_override["default"]
+            if value is not None and type(value) not in {str, int, float, bool}:
+                raise ValueError(f"Unsupported reviewed default for {model}.{raw_name}")
+            default = f"default={value!r}"
+        elif reviewed_override.get("nullable"):
+            default = "default=None"
         options = [x for x in (default, f"alias={alias!r}" if alias else None) if x]
         if aliases:
             choices = ", ".join(repr(v) for v in [alias or raw_name, *aliases])
@@ -289,6 +303,7 @@ def render(inventory: Record, spec: Record) -> dict[str, str]:
             spec.get("model_names"),
             spec.get("external_models"),
             spec.get("external_types"),
+            spec.get("field_overrides"),
         )
         methods: list[str] = []
         adapters: list[str] = []
@@ -619,6 +634,7 @@ def load_spec(root: Path) -> Record:
         "model_names": {},
         "external_models": {},
         "external_types": {},
+        "field_overrides": {},
     }
     for path in sorted((root / "migration").glob("batch-*.json")):
         batch = json.loads(path.read_text(encoding="utf8"))
@@ -628,7 +644,13 @@ def load_spec(root: Path) -> Record:
         result["endpoints"].extend(
             {**e, "batch": path.stem.removeprefix("batch-")} for e in batch["endpoints"]
         )
-        for group in ("model_defaults", "model_names", "external_models", "external_types"):
+        for group in (
+            "model_defaults",
+            "model_names",
+            "external_models",
+            "external_types",
+            "field_overrides",
+        ):
             for key, value in batch.get(group, {}).items():
                 if key in result[group] and result[group][key] != value:
                     raise ValueError(f"Conflicting {group}: {key}")

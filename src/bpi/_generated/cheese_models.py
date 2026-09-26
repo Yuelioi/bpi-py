@@ -86,7 +86,7 @@ class CoursePayment(ResponseModel):
     """Source: src/cheese/info.rs:109:CoursePayment."""
 
     desc: str
-    discount_desc: str
+    discount_desc: str = Field(default="")
     discount_prefix: str = Field(default="")
     pay_shade: str
     price: float
@@ -157,7 +157,7 @@ class CourseInfo(ResponseModel):
     """Source: src/cheese/info.rs:12:CourseInfo."""
 
     brief: CourseBrief
-    coupon: CourseCoupon
+    coupon: CourseCoupon | None = Field(default=None)
     cover: str
     episode_page: CourseEpisodePage
     episode_sort: int

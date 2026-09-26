@@ -91,13 +91,23 @@ class FragmentVideo(ResponseModel):
     video_info: CourseVideoInfo
 
 
+class CourseHlsTrack(ResponseModel):
+    id: int
+    stream_url: str
+
+
+class CourseHlsStreams(ResponseModel):
+    video: list[CourseHlsTrack] = Field(default_factory=list)
+    audio: list[CourseHlsTrack] = Field(default_factory=list)
+
+
 class CourseVideoStreamData(ResponseModel):
     """Course playurl payload with the Rust flattened common stream fields."""
 
     quality: int
-    accept_quality: list[int]
-    accept_format: str
-    accept_description: list[str]
+    accept_quality: list[int] = Field(default_factory=list)
+    accept_format: str = ""
+    accept_description: list[str] = Field(default_factory=list)
     format: str
     video_codecid: int
     durl: list[DurlInfo] | None = None
@@ -107,6 +117,10 @@ class CourseVideoStreamData(ResponseModel):
     timelength: int | None = None
     fnval: int | None = None
     is_preview: int | None = None
+    is_drm: bool | None = None
+    drm_type: str | None = None
+    drm_tech_type: int | None = None
+    hls: CourseHlsStreams | None = None
 
     seek_param: str
     video_project: bool

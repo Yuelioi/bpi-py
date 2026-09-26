@@ -24,6 +24,7 @@ uv run python -m tools.migration.generate --check
 - 顶层返回类型也可通过 `external_models` 直接复用手写模型；生成客户端会直接导入该模型，不要求生成模型文件中出现无用转发 import。
 - 字符串参数可显式配置 nonblank=true，按源码去除首尾空白并拒绝空字符串。
 - model_names 对精确源码类型路径显式重命名，external_models 显式复用手写 Pydantic 模型。未配置的类型歧义仍会失败。
+- field_overrides 仅用于已复核的上游兼容差异，例如旧基线中后来变为可空或新增默认值的字段；生成结果继续通过离线 fixture 验证。
 - 嵌套默认结构需显式复核值；BangumiMedia.rating 对应 Rust BangumiRating::default() 的 count=0、score=0.0。
 - 从原契约查询生成测试调用 kwargs，保留原契约作为独立请求预期。
 - fixed_query 明确固定字符串参数；query_copies 把已验证参数复制到协议要求的其他查询字段，例如首页推荐 fresh_idx 同步到 fresh_idx_1h/brush。
