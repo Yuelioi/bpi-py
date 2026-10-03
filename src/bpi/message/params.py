@@ -64,8 +64,69 @@ def single_unread_query(
 
 
 def receiver_query(receiver_id: int, receiver_type: int) -> tuple[str, str]:
-    receiver = integer(receiver_id, "receiver_id")
+    receiver = _uint64(receiver_id, "receiver_id")
     kind = integer(receiver_type, "receiver_type")
     if receiver_type not in (1, 2):
         raise InvalidParameterError("receiver_type must be 1 or 2")
     return receiver, kind
+
+
+class SessionListType(IntEnum):
+    USER_AND_SYSTEM = 1
+    UNFOLLOWED = 2
+    ALL = 4
+
+
+def _uint64(value: int, field: str) -> str:
+    result = integer(value, field)
+    if value > 2**64 - 1:
+        raise InvalidParameterError(f"{field} exceeds uint64")
+    return result
+
+
+def _page_size(size: int) -> str:
+    result = integer(size, "size")
+    if size > 100:
+        raise InvalidParameterError("size must be between 1 and 100")
+    return result
+
+
+def sessions_query(
+    session_type: int | SessionListType,
+    size: int,
+    begin_ts: int | None,
+    end_ts: int | None,
+) -> dict[str, str]:
+    kind = int(session_type) if isinstance(session_type, SessionListType) else session_type
+    kind_text = integer(kind, "session_type")
+    if kind not in (1, 2, 4):
+        raise InvalidParameterError("session_type must be 1, 2 or 4")
+    query = {
+        "session_type": kind_text,
+        "sort_rule": "2",
+        "size": _page_size(size),
+        "mobi_app": "web",
+        "group_fold": "0",
+        "unfollow_fold": "0",
+    }
+    if begin_ts is not None:
+        query["begin_ts"] = _uint64(begin_ts, "begin_ts")
+    if end_ts is not None:
+        query["end_ts"] = _uint64(end_ts, "end_ts")
+    return query
+
+
+def session_messages_query(
+    talker_id: int, size: int, begin_seqno: int | None, end_seqno: int | None
+) -> dict[str, str]:
+    query = {
+        "talker_id": _uint64(talker_id, "talker_id"),
+        "session_type": "1",
+        "size": _page_size(size),
+        "mobi_app": "web",
+    }
+    if begin_seqno is not None:
+        query["begin_seqno"] = _uint64(begin_seqno, "begin_seqno")
+    if end_seqno is not None:
+        query["end_seqno"] = _uint64(end_seqno, "end_seqno")
+    return query

@@ -194,7 +194,7 @@ async def test_send_requires_csrf_and_sender_uid():
 
 def test_fixture_hashes_are_recorded():
     provenance = json.loads((FIXTURES / "provenance.json").read_bytes())
-    paths = [path for path in provenance["sha256"] if path.startswith("message/")]
+    paths = [path for path in provenance["sha256"] if path.startswith("message/read/")]
     assert len(paths) == 9
     for rel in paths:
         assert (
@@ -212,7 +212,7 @@ def test_complete_message_mapping():
         if api["python"].startswith("AsyncBpiClient.message.") and api["status"] == "implemented"
     }
     assert expected == {"unread_count", "reply_feed", "single_unread", "send"}
-    assert implemented == expected
+    assert implemented == expected | {"sessions", "session_messages"}
     assert inspect.iscoroutinefunction(MessageClient.unread_count)
     assert inspect.iscoroutinefunction(MessageClient.reply_feed)
     assert inspect.iscoroutinefunction(MessageClient.single_unread)

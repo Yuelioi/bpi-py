@@ -11,7 +11,7 @@
 
 如果你想在 Python 里获取视频信息、搜索、用户资料、排行榜、直播、动态、评论、收藏夹、音频、番剧，或者调用登录态与创作中心接口，`bpi-py` 提供了一套统一、类型化的调用方式。
 
-当前覆盖 **27 个领域、316 个公开方法**。
+当前覆盖 **27 个领域、318 个公开方法**。
 
 > [!IMPORTANT]
 > `bpi-py` 是非官方第三方项目，与哔哩哔哩（Bilibili）无隶属、合作、授权或官方支持关系。
@@ -196,7 +196,7 @@ SDK 负责请求和登录状态解析，二维码如何展示、多久轮询一�
 
 ## 覆盖了哪些模块？
 
-目前公开方法已经全部映射，共 **316/316**：
+目前公开方法已经全部映射，共 **316/316（原固定 inventory）加 2 项私信读取增量**：
 
 | 类型 | 模块 |
 | --- | --- |
@@ -293,3 +293,5 @@ MIT License，见 [`LICENSE`](LICENSE)。
 
 来自 `bpi-rs` 的协议、类型和测试资产沿用其 MIT 许可与归属信息，见 [`migration/SOURCE-LICENSE.txt`](migration/SOURCE-LICENSE.txt)。
 
+
+私信增量：`client.message.sessions()`、`session_messages(talker_id=...)` 与既有 `send(receiver_id=..., message=...)` 的正式 Rust 契约，见 [私信说明](docs/private-message-api.md)。已提交的 Rust 增量来源记录在 `migration/private-message.json`，原 inventory 提交不被改写。

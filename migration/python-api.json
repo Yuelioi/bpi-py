@@ -1718,15 +1718,16 @@
       "risk": "private-read"
     },
     {
-      "contract": "message.send",
+      "contract": "message.private.send",
       "python": "AsyncBpiClient.message.send",
       "module": "src/bpi/message/client.py",
       "status": "implemented",
       "response": "SendMsgData",
-      "risk": "authenticated-write",
-      "validation": "source_derived_synthetic_offline",
+      "risk": "mutating",
+      "validation": "offline_contracts_and_verified_send_shape",
       "source": "src/message/private_msg.rs",
-      "source_sha256": "c8fa771edf26027600a016df432cca631e577a42e69a7ea86a923e165a158e8c"
+      "source_sha256": "4c4864e27e3412bb6f1b92730a2fbb462ce6f61bde376b7fba6e6b0a9ab397a6",
+      "source_manifest": "migration/private-message.json"
     },
     {
       "contract": "misc.buvid3",
@@ -3109,6 +3110,26 @@
       "validation": "source_derived_synthetic_offline",
       "source": "src/creativecenter/upload.rs",
       "source_sha256": "2eccbe58cadfa91d3175ae9e2e10121066a6f3042e70dd40ba947563e6ca81de"
+    },
+    {
+      "contract": "message.sessions",
+      "python": "AsyncBpiClient.message.sessions",
+      "module": "src/bpi/message/client.py",
+      "status": "implemented",
+      "response": "SessionsData",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source_manifest": "migration/private-message.json"
+    },
+    {
+      "contract": "message.session_messages",
+      "python": "AsyncBpiClient.message.session_messages",
+      "module": "src/bpi/message/client.py",
+      "status": "implemented",
+      "response": "SessionMessagesData",
+      "risk": "private-read",
+      "validation": "offline_contracts",
+      "source_manifest": "migration/private-message.json"
     }
   ],
   "generated_fixture_provenance": "tests/generated_reads/fixtures/provenance.json",
@@ -3284,5 +3305,6 @@
       "status": "implemented",
       "validation": "offline_only"
     }
-  }
+  },
+  "incremental_additions": "migration/private-message.json"
 }

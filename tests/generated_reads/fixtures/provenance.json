@@ -445,6 +445,18 @@
     "manga/read/season-info/responses/success.json": "9f17d998ad4534a9ed9f3cf0a981f9ebc5818f5ddd0841ef2b05b2c540039e93",
     "manga/read/user-point/contract.json": "d86c1472e46ab0dc4452a09504876e20049a312bb7d7d6eee13f5a7a3d76fb1a",
     "manga/read/user-point/responses/success.json": "bcc966f6005f87822b8356c8969f0d75380cf01979a76d899333e7bda8277a87",
+    "message/private-read/session-messages/contract.json": "7213e1b77b605da4d6cd398611e15af7c6fc93180148746268463e6b3ba35507",
+    "message/private-read/session-messages/responses/anonymous.requires_login.json": "5b778eaa6677396f47653606237fa73e7d1fe47e517be9f757ee47f4effef620",
+    "message/private-read/session-messages/responses/normal.requires_login.json": "5b778eaa6677396f47653606237fa73e7d1fe47e517be9f757ee47f4effef620",
+    "message/private-read/session-messages/responses/vip.empty.json": "3fe907657df50acb7fa1c88cecb231344eea59e2ceceda3f1eff7b701f4c2705",
+    "message/private-read/session-messages/responses/vip.success.json": "db8f5ec765e11d94427caf444727b45e36a42eb7e35b49e50694d8bf37f2290c",
+    "message/private-read/sessions/contract.json": "f5f17572a215e26f5ebf31c344fd902b820ae217a5d0b3959c8203799465a884",
+    "message/private-read/sessions/responses/anonymous.requires_login.json": "5b778eaa6677396f47653606237fa73e7d1fe47e517be9f757ee47f4effef620",
+    "message/private-read/sessions/responses/normal.requires_login.json": "5b778eaa6677396f47653606237fa73e7d1fe47e517be9f757ee47f4effef620",
+    "message/private-read/sessions/responses/vip.empty.json": "c2a1359106bc7b355a9e23702df387a9ae14b06c2d6035f65194d15d6ffe3c1c",
+    "message/private-read/sessions/responses/vip.success.json": "acf5820d69511a5090d06635cb10ae903451b1878da99311ade3e3387fd964de",
+    "message/private-write/send/contract.json": "e660eb0e0949b6d6340bb8b6f1bf98cd8c040e6c2d94a833daca8f1539396170",
+    "message/private-write/send/responses/synthetic.success.json": "7b1bc1ef163b8ef79ddbd696804d0494caf37f7c906dd393c03120e01324b818",
     "message/read/reply-feed/contract.json": "f8749c5676b5f83c8ab24ba58986f0bb343443df0057872f8a16898838544b1f",
     "message/read/reply-feed/responses/anonymous.requires_login.json": "882edadad9cd19d0fc6e3bdeea75d24094698966733c412e7dc64a3955b9f3a8",
     "message/read/reply-feed/responses/authenticated.success.json": "b9b64dba28479c5aee52c034a20e8ba8d0adb4ea222bc1f14c2b077d2094438e",
@@ -635,5 +647,9 @@
     "web_widget/region-banner/responses/anonymous.success.json": "5876ac5c67684f528638f1420f7c351fe176005623886580f10f03e49c28136d",
     "web_widget/region-banner/responses/normal.success.json": "5876ac5c67684f528638f1420f7c351fe176005623886580f10f03e49c28136d",
     "web_widget/region-banner/responses/vip.success.json": "5876ac5c67684f528638f1420f7c351fe176005623886580f10f03e49c28136d"
+  },
+  "incremental_additions": {
+    "message/private-read": "migration/private-message.json",
+    "message/private-write": "migration/private-message.json"
   }
 }

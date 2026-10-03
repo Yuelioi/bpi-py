@@ -9,11 +9,22 @@ from pydantic import TypeAdapter
 from bpi.errors import AuthenticationError, InvalidParameterError
 from bpi.session import parse_cookie
 
-from .models import MessageImage, ReplyFeedData, SendMsgData, SingleUnreadData, UnreadCountData
+from .models import (
+    MessageImage,
+    ReplyFeedData,
+    SendMsgData,
+    SessionMessagesData,
+    SessionsData,
+    SingleUnreadData,
+    UnreadCountData,
+)
 from .params import (
+    SessionListType,
     SingleUnreadType,
     receiver_query,
     reply_feed_query,
+    session_messages_query,
+    sessions_query,
     single_unread_query,
     unread_count_query,
 )
@@ -26,11 +37,45 @@ _UNREAD = TypeAdapter(UnreadCountData)
 _REPLY = TypeAdapter(ReplyFeedData)
 _SINGLE = TypeAdapter(SingleUnreadData)
 _SEND = TypeAdapter(SendMsgData)
+_SESSIONS = TypeAdapter(SessionsData)
+_SESSION_MESSAGES = TypeAdapter(SessionMessagesData)
 
 
 class MessageClient:
     def __init__(self, client: AsyncBpiClient) -> None:
         self._client = client
+
+    async def sessions(
+        self,
+        *,
+        session_type: int | SessionListType = SessionListType.ALL,
+        size: int = 100,
+        begin_ts: int | None = None,
+        end_ts: int | None = None,
+    ) -> SessionsData:
+        """读取一页会话，不标记已读。ALL 可能忽略 end_ts，须检查游标前进。"""
+        return await self._client._get_payload(
+            "/session_svr/v1/session_svr/get_sessions",
+            sessions_query(session_type, size, begin_ts, end_ts),
+            _SESSIONS,
+            host="api.vc.bilibili.com",
+        )
+
+    async def session_messages(
+        self,
+        *,
+        talker_id: int,
+        size: int = 100,
+        begin_seqno: int | None = None,
+        end_seqno: int | None = None,
+    ) -> SessionMessagesData:
+        """读取一页用户私信，保留服务端顺序和序列号边界。"""
+        return await self._client._get_payload(
+            "/svr_sync/v1/svr_sync/fetch_session_msgs",
+            session_messages_query(talker_id, size, begin_seqno, end_seqno),
+            _SESSION_MESSAGES,
+            host="api.vc.bilibili.com",
+        )
 
     async def unread_count(self, *, build: str = "0", mobi_app: str = "web") -> UnreadCountData:
         return await self._client._get_payload(
@@ -74,23 +119,32 @@ class MessageClient:
         message: str | MessageImage,
         receiver_type: int = 1,
     ) -> SendMsgData:
+        """发送私信，需要账号、CSRF 与 WBI；失败不自动重试，须核对非零 msg_key。"""
         receiver, receiver_kind = receiver_query(receiver_id, receiver_type)
-        csrf = self._client.csrf()
-        cookie_request = self._client._http.build_request("GET", "https://api.bilibili.com/")
-        sender_uid = parse_cookie(cookie_request.headers.get("cookie", "")).get("DedeUserID")
-        if not sender_uid:
-            raise AuthenticationError(-101)
-
-        dev_id = str(uuid4())
-        timestamp = int(self._client._clock())
         if isinstance(message, str):
+            if not message.strip():
+                raise InvalidParameterError("text cannot be blank")
             msg_type = "1"
             content = json.dumps({"content": message}, ensure_ascii=False, separators=(",", ":"))
+            try:
+                encoded_size = len(content.encode("utf-8"))
+            except UnicodeError:
+                raise InvalidParameterError("text must be valid UTF-8") from None
+            if encoded_size > 2000:
+                raise InvalidParameterError("encoded text exceeds 2000 bytes")
         elif isinstance(message, MessageImage):
             msg_type = "2"
             content = message.model_dump_json(by_alias=True)
         else:
             raise InvalidParameterError("message must be text or MessageImage")
+
+        csrf = self._client.csrf()
+        cookie_request = self._client._http.build_request("GET", "https://api.bilibili.com/")
+        sender_uid = parse_cookie(cookie_request.headers.get("cookie", "")).get("DedeUserID")
+        if not sender_uid:
+            raise AuthenticationError(-101)
+        dev_id = str(uuid4())
+        timestamp = int(self._client._clock())
 
         form = {
             "msg[sender_uid]": sender_uid,

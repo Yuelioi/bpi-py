@@ -1,6 +1,16 @@
 from .client import MessageClient
-from .models import MessageImage, ReplyFeedData, SendMsgData, SingleUnreadData, UnreadCountData
-from .params import SingleUnreadType
+from .models import (
+    MessageImage,
+    PrivateMessage,
+    ReplyFeedData,
+    SendMsgData,
+    Session,
+    SessionMessagesData,
+    SessionsData,
+    SingleUnreadData,
+    UnreadCountData,
+)
+from .params import SessionListType, SingleUnreadType
 
 __all__ = [
     "MessageClient",
@@ -10,4 +20,9 @@ __all__ = [
     "SingleUnreadData",
     "SingleUnreadType",
     "UnreadCountData",
+    "PrivateMessage",
+    "Session",
+    "SessionsData",
+    "SessionMessagesData",
+    "SessionListType",
 ]
