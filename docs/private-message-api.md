@@ -11,3 +11,5 @@ Rust 是协议基准，本地新增来源与逐文件 SHA256 见 `migration/priv
 实测 `SessionListType.ALL=4` 忽略 end_ts 并重复首条；历史分页应分别查询 USER_AND_SYSTEM=1、UNFOLLOWED=2，使用上一页最小 session_ts，合并去重，并检查游标前进与 has_more。默认增量 begin_ts 的空页已经验证；SDK 不自动翻页。
 
 发送需要 Cookie、CSRF 与 WBI，失败不自动重试，调用方须核对非零 msg_key。结果不确定时先回读确认。发送契约的样例是 `synthetic_verified_shape`，只有非零消息编号和消费项目回读曾实测，不声称完整响应已 live 验证。默认测试全部离线，本批没有重复发送。
+
+普通会话在深分页中也可能没有最近消息，`last_msg` 可为 `None`；调用方应处理空会话。

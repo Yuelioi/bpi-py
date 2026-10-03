@@ -149,7 +149,7 @@ class Session(ResponseModel):
     system_msg_type: UInt32
     is_follow: UInt32
     is_dnd: UInt32
-    last_msg: PrivateMessage
+    last_msg: PrivateMessage | None = None
 
 
 class SessionsData(ResponseModel):

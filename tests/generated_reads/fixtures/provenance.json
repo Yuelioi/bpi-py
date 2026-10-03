@@ -450,7 +450,7 @@
     "message/private-read/session-messages/responses/normal.requires_login.json": "5b778eaa6677396f47653606237fa73e7d1fe47e517be9f757ee47f4effef620",
     "message/private-read/session-messages/responses/vip.empty.json": "3fe907657df50acb7fa1c88cecb231344eea59e2ceceda3f1eff7b701f4c2705",
     "message/private-read/session-messages/responses/vip.success.json": "db8f5ec765e11d94427caf444727b45e36a42eb7e35b49e50694d8bf37f2290c",
-    "message/private-read/sessions/contract.json": "f5f17572a215e26f5ebf31c344fd902b820ae217a5d0b3959c8203799465a884",
+    "message/private-read/sessions/contract.json": "24f847ce6cd9f4e187bc09a11ce2312331c5754c633b256a46cadfb3a016eca7",
     "message/private-read/sessions/responses/anonymous.requires_login.json": "5b778eaa6677396f47653606237fa73e7d1fe47e517be9f757ee47f4effef620",
     "message/private-read/sessions/responses/normal.requires_login.json": "5b778eaa6677396f47653606237fa73e7d1fe47e517be9f757ee47f4effef620",
     "message/private-read/sessions/responses/vip.empty.json": "c2a1359106bc7b355a9e23702df387a9ae14b06c2d6035f65194d15d6ffe3c1c",
@@ -646,7 +646,8 @@
     "web_widget/region-banner/contract.json": "f5d5c0dee33be87e1c84e789f407569a080f55421f80ce4018aa21dd7ee7ef02",
     "web_widget/region-banner/responses/anonymous.success.json": "5876ac5c67684f528638f1420f7c351fe176005623886580f10f03e49c28136d",
     "web_widget/region-banner/responses/normal.success.json": "5876ac5c67684f528638f1420f7c351fe176005623886580f10f03e49c28136d",
-    "web_widget/region-banner/responses/vip.success.json": "5876ac5c67684f528638f1420f7c351fe176005623886580f10f03e49c28136d"
+    "web_widget/region-banner/responses/vip.success.json": "5876ac5c67684f528638f1420f7c351fe176005623886580f10f03e49c28136d",
+    "message/private-read/sessions/responses/vip.no-last-message.json": "01371c67e11fe2f8beede3e1577d14b3c76a87053f9915aab79d1e91fe7fec03"
   },
   "incremental_additions": {
     "message/private-read": "migration/private-message.json",

@@ -225,7 +225,22 @@ def test_committed_provenance_and_exact_fixture_hashes():
         for path, digest in manifest["sha256"].items()
         if path.startswith("tests/contracts/")
     }
-    assert len(hashes) == 12
+    assert len(hashes) == 13
     for source_path, digest in hashes.items():
         relative = source_path.removeprefix("tests/contracts/")
         assert hashlib.sha256((FIXTURES / relative).read_bytes()).hexdigest() == digest
+
+
+@pytest.mark.parametrize("omit", [False, True])
+async def test_sessions_without_last_message(omit):
+    path = FIXTURES / "message/private-read/sessions/responses/vip.no-last-message.json"
+    body = json.loads(path.read_bytes())
+    if omit:
+        del body["data"]["session_list"][0]["last_msg"]
+    async with AsyncBpiClient(
+        cookie=COOKIE,
+        transport=httpx.MockTransport(lambda request: httpx.Response(200, json=body)),
+    ) as client:
+        result = await client.message.sessions(session_type=SessionListType.USER_AND_SYSTEM)
+    assert result.session_list is not None
+    assert result.session_list[0].last_msg is None

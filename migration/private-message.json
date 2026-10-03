@@ -5,9 +5,9 @@
   "scope": "message private reads and existing send contract",
   "sha256": {
     "src/message/mod.rs": "d253bfc822ddcf859a148a57a3166be7d4cc2ff458785cdaaa77aa2a544d6175",
-    "src/message/private_contract_tests.rs": "c3956596be032d6b088df9e6d48c4d6c0e1d9a7a825c7bf7091320fe8380011d",
+    "src/message/private_contract_tests.rs": "7a7cd97f4b5f1e373ee45939c53a2189e035050977b36e9e987dd6d561f33b1f",
     "src/message/private_msg.rs": "4c4864e27e3412bb6f1b92730a2fbb462ce6f61bde376b7fba6e6b0a9ab397a6",
-    "src/message/session.rs": "cacceecfc801a48de026bc287cb34d7779ac212d34d790bc2d2c90ed79c193b7",
+    "src/message/session.rs": "3b811adfc8bb0139d6dc578e997c44b25af8c2d418f316128a1223764b067cde",
     "src/probe/audit.rs": "cb819b5113265ca7f5ea845721c62ce9c1509aaabb9f2820b450e7950563deb4",
     "src/probe/model.rs": "3b352cdd57c887f7e9646a820b7a2a05f23092201cf3b65cc0fa9dc8ec050b18",
     "src/transport/request.rs": "da214e2ab4176aa38cb2f2813748c2e8a1e10b4142fb192d34b2451ee6034b34",
@@ -16,13 +16,14 @@
     "tests/contracts/message/private-read/session-messages/responses/normal.requires_login.json": "5b778eaa6677396f47653606237fa73e7d1fe47e517be9f757ee47f4effef620",
     "tests/contracts/message/private-read/session-messages/responses/vip.empty.json": "3fe907657df50acb7fa1c88cecb231344eea59e2ceceda3f1eff7b701f4c2705",
     "tests/contracts/message/private-read/session-messages/responses/vip.success.json": "db8f5ec765e11d94427caf444727b45e36a42eb7e35b49e50694d8bf37f2290c",
-    "tests/contracts/message/private-read/sessions/contract.json": "f5f17572a215e26f5ebf31c344fd902b820ae217a5d0b3959c8203799465a884",
+    "tests/contracts/message/private-read/sessions/contract.json": "24f847ce6cd9f4e187bc09a11ce2312331c5754c633b256a46cadfb3a016eca7",
     "tests/contracts/message/private-read/sessions/responses/anonymous.requires_login.json": "5b778eaa6677396f47653606237fa73e7d1fe47e517be9f757ee47f4effef620",
     "tests/contracts/message/private-read/sessions/responses/normal.requires_login.json": "5b778eaa6677396f47653606237fa73e7d1fe47e517be9f757ee47f4effef620",
     "tests/contracts/message/private-read/sessions/responses/vip.empty.json": "c2a1359106bc7b355a9e23702df387a9ae14b06c2d6035f65194d15d6ffe3c1c",
     "tests/contracts/message/private-read/sessions/responses/vip.success.json": "acf5820d69511a5090d06635cb10ae903451b1878da99311ade3e3387fd964de",
     "tests/contracts/message/private-write/send/contract.json": "e660eb0e0949b6d6340bb8b6f1bf98cd8c040e6c2d94a833daca8f1539396170",
-    "tests/contracts/message/private-write/send/responses/synthetic.success.json": "7b1bc1ef163b8ef79ddbd696804d0494caf37f7c906dd393c03120e01324b818"
+    "tests/contracts/message/private-write/send/responses/synthetic.success.json": "7b1bc1ef163b8ef79ddbd696804d0494caf37f7c906dd393c03120e01324b818",
+    "tests/contracts/message/private-read/sessions/responses/vip.no-last-message.json": "01371c67e11fe2f8beede3e1577d14b3c76a87053f9915aab79d1e91fe7fec03"
   },
   "apis": [
     {
@@ -41,6 +42,6 @@
       "contract": "message.private.send"
     }
   ],
-  "normalization": "new contract/fixture JSON uses LF in every SDK; Rust source hashes retain actual input bytes",
-  "source_commit": "be5854094c422d85a02f4f2dbcf1e0b064405ff3"
+  "normalization": "contract/fixture JSON and committed Rust source hashes use canonical LF bytes",
+  "source_commit": "24aa6b36712184422b852e50b2cd59c6e5df8de9"
 }
