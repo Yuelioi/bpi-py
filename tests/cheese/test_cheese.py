@@ -204,9 +204,9 @@ def test_course_without_coupon_or_discount_decodes():
 
 
 def test_drm_course_decodes_without_accept_fields_and_preserves_metadata():
-    payload = json.loads(
-        (LIVE_SHAPE_FIXTURES / "drm.anonymous.sanitized.json").read_bytes()
-    )["data"]
+    payload = json.loads((LIVE_SHAPE_FIXTURES / "drm.anonymous.sanitized.json").read_bytes())[
+        "data"
+    ]
     value = CourseVideoStreamData.model_validate(payload)
     assert value.accept_quality == []
     assert value.accept_format == ""
@@ -220,9 +220,9 @@ def test_drm_course_decodes_without_accept_fields_and_preserves_metadata():
 
 
 def test_preview_course_preserves_direct_stream_and_preview_flag():
-    payload = json.loads(
-        (LIVE_SHAPE_FIXTURES / "preview.anonymous.sanitized.json").read_bytes()
-    )["data"]
+    payload = json.loads((LIVE_SHAPE_FIXTURES / "preview.anonymous.sanitized.json").read_bytes())[
+        "data"
+    ]
     value = CourseVideoStreamData.model_validate(payload)
     assert value.is_preview == 1
     assert value.has_paid is False
