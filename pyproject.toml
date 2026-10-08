@@ -1,6 +1,6 @@
 [project]
 name = "bpi-py"
-version = "0.3.0"
+version = "0.3.1"
 description = "Async Bilibili API SDK for Python"
 readme = "README.md"
 license = "MIT"

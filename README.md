@@ -295,3 +295,5 @@ MIT License，见 [`LICENSE`](LICENSE)。
 
 
 私信增量：`client.message.sessions()`、`session_messages(talker_id=...)` 与既有 `send(receiver_id=..., message=...)` 的正式 Rust 契约，见 [私信说明](docs/private-message-api.md)。已提交的 Rust 增量来源记录在 `migration/private-message.json`，原 inventory 提交不被改写。
+
+当前版本 `0.3.1` 的能力增量见 [更新日志](CHANGELOG.md) 和 [三端对齐说明](docs/release-0.3.1.md)。

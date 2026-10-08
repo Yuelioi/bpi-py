@@ -11,3 +11,6 @@ AGENTS.md
 
 # Local Flightdeck work records
 /flightdeck/
+
+# Task build and release artifacts
+/.task/

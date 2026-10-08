@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pydantic import Field
+
 from bpi._core.response import ResponseModel
 from bpi.video.models import DashInfo, DurlInfo, SupportFormat
 
@@ -23,9 +25,9 @@ class BangumiVideoStreamData(ResponseModel):
     """Bangumi playurl payload with the Rust flattened common stream fields."""
 
     quality: int
-    accept_quality: list[int]
-    accept_format: str
-    accept_description: list[str]
+    accept_quality: list[int] = Field(default_factory=list)
+    accept_format: str = ""
+    accept_description: list[str] = Field(default_factory=list)
     format: str
     video_codecid: int
     durl: list[DurlInfo] | None = None

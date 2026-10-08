@@ -121,9 +121,9 @@ class PlayUrlResponseData(ResponseModel):
     quality: int
     format: str
     timelength: int
-    accept_format: str
-    accept_description: list[str]
-    accept_quality: list[int]
+    accept_format: str = ""
+    accept_description: list[str] = Field(default_factory=list)
+    accept_quality: list[int] = Field(default_factory=list)
     video_codecid: int
     seek_param: str
     seek_type: str
